@@ -64,7 +64,6 @@ old <- par()
 # loading libraries and useful functions
 library(thesisdown)
 library(ggplot2)
-library(timelineS)
 pkgs <- c("knitr", "tidyverse", "mvmeta", "dosresmeta", "lubridate", "rworldmap", "Epi", "xtable",
           "cowplot", "gridExtra", "scales", "kableExtra", "rms", "metafor", "hetmeta",
           "timelineS")
