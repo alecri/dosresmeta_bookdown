@@ -51,6 +51,7 @@ drm_versions <- data.frame(
   Event_Dates = as.Date(c("2013-09-09", "2014-01-17", "2015-08-06", "2017-07-31", "2017-08-17"))
 )
 
+library(timelineS)
 par(mar = c(0, 4.1, 0, 2.1))
 suppressWarnings(
   timelineS(drm_versions[1:5, ], 
