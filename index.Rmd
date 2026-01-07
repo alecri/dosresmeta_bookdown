@@ -1,0 +1,93 @@
+---
+author: 'Alessio Crippa'
+date: 'April 13, 2018'
+institution: 'Karolinska Institutet'
+advisor: 'Nicola Orsini'
+altadvisor: 'Alicja Wolk'
+department: 'Public Health Sciences'
+degree: 'Doctoral Degree (Ph.D.)'
+title: 'Novel methods for dose--response meta-analysis'
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+#  thesisdown::thesis_pdf: default
+  thesisdown::thesis_gitbook: default
+#  thesisdown::thesis_word: default
+#  thesisdown::thesis_epub: default
+# If you are creating a PDF you'll need to write your preliminary content here or
+# use code similar to line 20 for the files.  If you are producing in a different
+# format than PDF, you can delete or ignore lines 20-31 in this YAML header.
+abstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
+# If you'd rather include the preliminary content in files instead of inline
+# like below, use a command like that for the abstract above.  Note that a tab is 
+# needed on the line after the |.
+acknowledgements: |
+  I want to thank a few people.
+dedication: |
+  You can have a dedication here if you wish. 
+preface: |
+  This is an example of a thesis setup to use the reed thesis document class
+  (for LaTeX) and the R bookdown package, in general.
+bibliography: bib/thesis.bib
+link-citations: true
+# Download your specific bibliography database file and refer to it in the line above.
+csl: csl/apa.csl
+# Download your specific csl file and refer to it in the line above.
+lot: true
+lof: true
+#space_between_paragraphs: true
+# Delete the # at the beginning of the previous line if you'd like
+# to have a blank new line between each paragraph
+#header-includes:
+#- \usepackage{tikz}
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.  Be careful with spacing in this header!
+
+If you'd prefer to not include a Dedication, for example, simply delete lines 17 and 18 above or add a # before them to comment them out.  If you have other LaTeX packages you would like to include, delete the # before header-includes and list the packages after hyphens on new lines.
+
+If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+-->
+
+```{r, echo=FALSE, include=FALSE}
+library(knitr)
+library(jsonlite)
+opts_chunk$set(echo = FALSE, message = FALSE, comment = NA,
+               cache = FALSE, highlight = F, background = "white",
+               prompt = TRUE, size = "footnotesize", warning = FALSE)
+options(prompt ="R> ", width = 90, show.signif.stars = FALSE, knitr.kable.NA = '')
+knit_theme$set("print")
+old <- par()
+
+# loading libraries and useful functions
+library(thesisdown)
+library(ggplot2)
+pkgs <- c("knitr", "tidyverse", "mvmeta", "dosresmeta", "lubridate", "rworldmap", "Epi", "xtable",
+          "cowplot", "gridExtra", "scales", "kableExtra", "rms", "metafor", "hetmeta",
+          "timelineS")
+lapply(pkgs, require, character.only = TRUE)
+source("code/functions.R")
+# loading data
+data_names <- paste0("data/", 
+                     c("count_meta", "count_grl", "count_dosresmeta", "res_cov_lin",
+                       "res_cov_quadr", "breast_1501", "hyp_vi"), 
+                     ".RData")
+lapply(data_names, load, .GlobalEnv)
+# setting a ggplot theme for all the plots
+theme_kappa <- ggplot2::theme_light() +
+  ggplot2::theme(panel.border = element_blank(), axis.line = element_line(),
+        plot.title = element_text(hjust = 0.5))
+ggplot2::theme_set(theme_kappa)
+```
+
+<!-- You'll need to include the order that you'd like Rmd files to appear in the _bookdown.yml file for
+PDF files and also delete the # before rmd_files: there.  You'll want to not include 00(two-hyphens)prelim.Rmd
+and 00-abstract.Rmd since they are handled in the YAML above differently for the PDF version.
+-->
+
+<!-- The {.unnumbered} option here means that the introduction will be "Chapter 0." You can also use {-} for no numbers
+on chapters.
+-->
+

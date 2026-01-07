@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Methods | Novel methods for dose–response meta-analysis</title>
+  <meta name="description" content="Chapter 4 Methods | Novel methods for dose–response meta-analysis" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Methods | Novel methods for dose–response meta-analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Methods | Novel methods for dose–response meta-analysis" />
+  
+  
+  
+
+<meta name="author" content="Alessio Crippa" />
+
+
+<meta name="date" content="2018-04-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="aim.html"/>
+<link rel="next" href="results.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#list-of-publications"><i class="fa fa-check"></i>List of publications</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#related-publications"><i class="fa fa-check"></i>Related publications</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#list-of-abbreviations"><i class="fa fa-check"></i>List of abbreviations</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="background.html"><a href="background.html#meta-analysis"><i class="fa fa-check"></i><b>2.1</b> Meta-analysis</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="background.html"><a href="background.html#sec:rma"><i class="fa fa-check"></i><b>2.1.1</b> Random-effects meta-analysis</a></li>
+<li class="chapter" data-level="2.1.2" data-path="background.html"><a href="background.html#sec:het_rma"><i class="fa fa-check"></i><b>2.1.2</b> Test and estimates of heterogeneity</a></li>
+<li class="chapter" data-level="2.1.3" data-path="background.html"><a href="background.html#sec:measures-het"><i class="fa fa-check"></i><b>2.1.3</b> Measures of heterogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="background.html"><a href="background.html#categorical-models-for-doseresponse-analysis"><i class="fa fa-check"></i><b>2.2</b> Categorical models for dose–response analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="background.html"><a href="background.html#aggregated-doseresponse-data"><i class="fa fa-check"></i><b>2.2.1</b> Aggregated dose–response data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="background.html"><a href="background.html#high-vs.-low-and-categorical-meta-analysis"><i class="fa fa-check"></i><b>2.2.2</b> High vs. low and categorical meta-analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="background.html"><a href="background.html#doseresponse-meta-analysis"><i class="fa fa-check"></i><b>2.3</b> Dose–response meta-analysis</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="background.html"><a href="background.html#sec:1st-stage"><i class="fa fa-check"></i><b>2.3.1</b> First stage: study-specific trends</a></li>
+<li class="chapter" data-level="2.3.2" data-path="background.html"><a href="background.html#sec:2nd-stage"><i class="fa fa-check"></i><b>2.3.2</b> Second stage: multivariate meta-analysis</a></li>
+<li class="chapter" data-level="2.3.3" data-path="background.html"><a href="background.html#history-of-previous-methodological-research"><i class="fa fa-check"></i><b>2.3.3</b> History of previous methodological research</a></li>
+<li class="chapter" data-level="2.3.4" data-path="background.html"><a href="background.html#description-of-current-practice"><i class="fa fa-check"></i><b>2.3.4</b> Description of current practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="background.html"><a href="background.html#software"><i class="fa fa-check"></i><b>2.4</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aim.html"><a href="aim.html"><i class="fa fa-check"></i><b>3</b> Aims of the thesis</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#sec:dosresmeta"><i class="fa fa-check"></i><b>4.1</b> The <strong>dosresmeta</strong> R package</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="methods.html"><a href="methods.html#architecture-and-design-of-the-package"><i class="fa fa-check"></i><b>4.1.1</b> Architecture and design of the package</a></li>
+<li class="chapter" data-level="4.1.2" data-path="methods.html"><a href="methods.html#description-of-the-package"><i class="fa fa-check"></i><b>4.1.2</b> Description of the package</a></li>
+<li class="chapter" data-level="4.1.3" data-path="methods.html"><a href="methods.html#datasets"><i class="fa fa-check"></i><b>4.1.3</b> Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#sec:gof"><i class="fa fa-check"></i><b>4.2</b> Goodness-of-fit</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="methods.html"><a href="methods.html#deviance"><i class="fa fa-check"></i><b>4.2.1</b> Deviance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="methods.html"><a href="methods.html#coefficient-of-determination"><i class="fa fa-check"></i><b>4.2.2</b> Coefficient of determination</a></li>
+<li class="chapter" data-level="4.2.3" data-path="methods.html"><a href="methods.html#visual-tools"><i class="fa fa-check"></i><b>4.2.3</b> Visual tools</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#sec:Rb"><i class="fa fa-check"></i><b>4.3</b> A new measure of heterogeneity</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#definition-and-properties"><i class="fa fa-check"></i><b>4.3.1</b> Definition and properties</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="methods.html"><a href="methods.html#sec:pwa"><i class="fa fa-check"></i><b>4.4</b> A point-wise approach</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="methods.html"><a href="methods.html#estimation-and-prediction-of-study-specific-curves"><i class="fa fa-check"></i><b>4.4.1</b> Estimation and prediction of study-specific curves</a></li>
+<li class="chapter" data-level="4.4.2" data-path="methods.html"><a href="methods.html#averaging-of-doseresponse-predictions"><i class="fa fa-check"></i><b>4.4.2</b> Averaging of dose–response predictions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="methods.html"><a href="methods.html#sec:one-stage"><i class="fa fa-check"></i><b>4.5</b> A one-stage model</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="methods.html"><a href="methods.html#model-definition"><i class="fa fa-check"></i><b>4.5.1</b> Model definition</a></li>
+<li class="chapter" data-level="4.5.2" data-path="methods.html"><a href="methods.html#estimation-hypothesis-testing-and-model-comparison"><i class="fa fa-check"></i><b>4.5.2</b> Estimation, hypothesis testing, and model comparison</a></li>
+<li class="chapter" data-level="4.5.3" data-path="methods.html"><a href="methods.html#prediction"><i class="fa fa-check"></i><b>4.5.3</b> Prediction</a></li>
+<li class="chapter" data-level="4.5.4" data-path="methods.html"><a href="methods.html#comparison-with-two-stage-analysis"><i class="fa fa-check"></i><b>4.5.4</b> Comparison with two-stage analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#sec:res-paperI"><i class="fa fa-check"></i><b>5.1</b> Paper I</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#single-study-analysis"><i class="fa fa-check"></i><b>5.1.1</b> Single study analysis</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#multiple-studies"><i class="fa fa-check"></i><b>5.1.2</b> Multiple studies</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#sec:res-paperII"><i class="fa fa-check"></i><b>5.2</b> Paper II</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#sec:res-paperIII"><i class="fa fa-check"></i><b>5.3</b> Paper III</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#processed-meat-and-bladder-cancer"><i class="fa fa-check"></i><b>5.3.1</b> Processed meat and bladder cancer</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#red-meat-and-bladder-cancer"><i class="fa fa-check"></i><b>5.3.2</b> Red meat and bladder cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#sec:res-paperIV"><i class="fa fa-check"></i><b>5.4</b> Paper IV</a></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#sec:res-paperV"><i class="fa fa-check"></i><b>5.5</b> Paper V</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness-of-fit</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#a-new-measure-of-heterogeneity"><i class="fa fa-check"></i><b>6.2</b> A new measure of heterogeneity</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#a-point-wise-approach"><i class="fa fa-check"></i><b>6.3</b> A point-wise approach</a></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#a-one-stage-model"><i class="fa fa-check"></i><b>6.4</b> A one-stage model</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>7</b> Conclusions</a></li>
+<li class="chapter" data-level="8" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>8</b> Future research</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="sec:rcs-app.html"><a href="sec:rcs-app.html"><i class="fa fa-check"></i><b>A</b> Appendix A: Restricted cubic splines</a></li>
+<li class="chapter" data-level="B" data-path="appendix-b-supplementary-figures.html"><a href="appendix-b-supplementary-figures.html"><i class="fa fa-check"></i><b>B</b> Appendix B: Supplementary figures</a></li>
+<li class="chapter" data-level="C" data-path="appendix-c-supplementary-tables.html"><a href="appendix-c-supplementary-tables.html"><i class="fa fa-check"></i><b>C</b> Appendix C: Supplementary tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Novel methods for dose–response meta-analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:dosresmeta" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> The <strong>dosresmeta</strong> R package<a href="methods.html#sec:dosresmeta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first version of the <strong>dosresmeta</strong> R package was released on the Comprehensive R Archive Network (CRAN) on September 2013. It is listed in the CRAN task view Meta-Analysis (<a href="https://CRAN.R-project.org/view=MetaAnalysis" class="uri">https://CRAN.R-project.org/view=MetaAnalysis</a>), a guide that covers the vast collection of R packages for facilitating meta-analysis of summary statistics.</p>
+<div class="figure"><span style="display:block;" id="fig:dosresmeta-ts"></span>
+<img src="thesis_files/figure-html/dosresmeta-ts-1.png" alt="Monthly number of downloads of the **dosresmeta** R package from the RStudio CRAN mirror September 2013 - December 2017." width="672" />
+<p class="caption">
+Figure 4.1: Monthly number of downloads of the <strong>dosresmeta</strong> R package from the RStudio CRAN mirror September 2013 - December 2017.
+</p>
+</div>
+<p>The <strong>dosresmeta</strong> package is now available in the updated version 2.0.1 and new features are being implemented in the version under development on GitHub (<a href="https://github.com/alecri/dosresmeta" class="uri">https://github.com/alecri/dosresmeta</a>). Currently, the <strong>dosresmeta</strong> package is downloaded and used worldwide, with a median number of 260 downloads/month (Figure <a href="methods.html#fig:dosresmeta-ts">4.1</a>). The countries where it has been downloaded most are Great Britain (4005), United States (3905), and China (1605) (Figure <a href="methods.html#fig:dosresmeta-map">4.2</a>. Working examples, codes, and data are available at <a href="http://alecri.github.io/software" class="uri">http://alecri.github.io/software</a> to fully reproduce figures and numbers presented in both applied and theoretical papers.</p>
+<div class="figure"><span style="display:block;" id="fig:dosresmeta-map"></span>
+<img src="thesis_files/figure-html/dosresmeta-map-1.png" alt="Total number of downloads of the **dosresmeta** R package worldwide from the RStudio CRAN mirror September 2013 - December 2017." width="672" />
+<p class="caption">
+Figure 4.2: Total number of downloads of the <strong>dosresmeta</strong> R package worldwide from the RStudio CRAN mirror September 2013 - December 2017.
+</p>
+</div>
+<p>The implementation of the package is presented in Paper I, which is also offered as a free guide for the package in a vignette accessible by typing <code>browseVignettes("dosresmeta")</code> from the R console.</p>
+<div id="architecture-and-design-of-the-package" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Architecture and design of the package<a href="methods.html#architecture-and-design-of-the-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The initial version 1.0 of the <strong>dosresmeta</strong> R package implemented the two-stage approach for dose–response meta-analysis described in Sections <a href="background.html#sec:1st-stage">2.3.1</a> and <a href="background.html#sec:2nd-stage">2.3.2</a>. The package included some facilities for efficiently estimating the dose–response associations across the included studies and used the <strong>mvmeta</strong> package for combining the study-specific regression coefficients <span class="citation">(<a href="#ref-gasparrini2012multivariate">Gasparrini et al., 2012</a>)</span>. The main novelty of the version 1.0 was the implementation of <code>gl</code> and <code>hamling</code> functions for reconstructing the covariance matrices among sets of log relative risks using the methods developed by <span class="citation">Greenland &amp; Longnecker (<a href="#ref-greenland1992methods">1992</a>)</span> and <span class="citation">Hamling et al. (<a href="#ref-hamling2008facilitating">2008</a>)</span> (Figure <a href="methods.html#fig:drm-versions">4.3</a>).
+In version 1.3, dedicated functions were written for summarizing and displaying results, and for predicting the pooled dose–response association as described in Section <a href="background.html#sec:2nd-stage">2.3.2</a>. Compared to other routines, the <code>predict</code> function offers the possibility of deriving the predicted curve also for dose levels that are not observed in the analyzed data. The same applies for the choice of the reference dose value. The main advantage is that publication quality curves and tables (i.e. combined results for desired dose values) can be easily obtained with a few lines of code. Practical examples are available at <a href="https://alecri.github.io/software/dosresmeta.html" class="uri">https://alecri.github.io/software/dosresmeta.html</a>.
+Furthermore, the <code>center</code> argument was added in the main function for centering the design matrix as described by <span class="citation">Liu et al. (<a href="#ref-liu2009two">2009</a>)</span>. The argument has been set to <code>TRUE</code> by default for preventing possible errors when modelling non-linear curves, especially in case of non-zero exposure reference categories. Finally, additional arguments were introduced for allowing the specification of a list of covariance matrices directly by the user. This can be useful in pooling projects where the principle investigators share the results of harmonized analyses.</p>
+<p>New capabilities and functions were written in the version under development available on GitHub and were finally included in the major release version 2.0 on CRAN. The <strong>dosresmeta</strong> package was largely redesigned in the internal functions but kept unchanged the external form and arguments for backward compatibility. Three main features were introduced: the extension of the two-stage approach for dose–response meta-analysis of differences in means (rather than log relative risks) <span class="citation">(<a href="#ref-crippa2016dose">Crippa &amp; Orsini, 2016</a>)</span>, the possibility of fitting meta-regression models and the implementation of an alternative one-stage approach. The first was achieved by extending the choices of the <code>covariance</code> argument for results presented in terms of mean and standardized mean differences, which related to the <code>covar.smd</code> function. The alternative <code>covariance = "indep"</code> can be specified for assuming independence of the log relative risks or differences in means. This is particularly useful when the information for reconstructing the covariances is not available (see additional (useful) code section on the referenced site for examples).</p>
+<div class="figure"><span style="display:block;" id="fig:drm-versions"></span>
+<img src="thesis_files/figure-html/drm-versions-1.png" alt="Development of the **dosresmeta** R package over time." width="672" />
+<p class="caption">
+Figure 4.3: Development of the <strong>dosresmeta</strong> R package over time.
+</p>
+</div>
+<p>The implementation of the one-stage approach and related functions is discussed in more detail in the methods for Paper V.
+The updated <strong>dosresmeta</strong> package also implements functions to facilitate specific aspects of a dose–response meta-analysis. These includes the assessment of goodness-of-fit discussed in Paper II, tests for fixed- and random-effects coefficients, conditional and marginal predictions, and the use of fractional polynomials.</p>
+<p>Based on the last version of the <strong>dosresmeta</strong> package, an interactive interface is also available at <a href="http://alessiocrippa.com/shiny/dosresmeta" class="uri">http://alessiocrippa.com/shiny/dosresmeta</a>. The web-app can be useful for introducing the concepts of dose–response meta-analysis to those researchers who are not familiar with the R software.</p>
+</div>
+<div id="description-of-the-package" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Description of the package<a href="methods.html#description-of-the-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>dosresmeta</strong> package can be downloaded from CRAN by typing directly in R</p>
+<pre class="text"><code>R&gt; install.packages(&quot;dosresmeta&quot;)</code></pre>
+<p>The version under development is instead available from GitHub</p>
+<pre class="text"><code>R&gt; install.packages(&quot;devtools&quot;)
+R&gt; devtools::install_github(&quot;alecri/dosresmeta&quot;)</code></pre>
+<p>The package consists of a main function <code>dosresmeta</code> with the following arguments</p>
+<pre class="text"><code>R&gt; str(dosresmeta)</code></pre>
+<pre><code>function (formula, id, v, type, cases, n, sd, data, mod = ~1, intercept = F, 
+    center = T, se, lb, ub, covariance = &quot;gl&quot;, method = &quot;reml&quot;, proc = &quot;2stage&quot;, 
+    Slist, method.smd = &quot;cohen&quot;, control = list())  </code></pre>
+<p>The dose–response model is specified in the <code>formula</code> argument in a symbolic representation. For example, if logrr and dose are the variable names for the log relative risk and assigned doses, a linear trend is specified as <code>logrr ~ dose</code> while a quadratic curve as <code>logrr ~ dose + I(dose^2)</code>. The variables are defined in a <code>data.frame</code> whose name is specified in the <code>data</code> argument. By default <code>intercept = FALSE</code> does not include the intercept term in the covariance matrix, which is constructed in terms of contrasts unless <code>center = FALSE</code>. The <code>id</code> argument specifies the name for the study id variable (can be omitted for single study analysis).
+The standard errors for the log relative risks are specified in the <code>se</code> argument, or alternatively, either the variances (<code>v</code>) or the lower (<code>lb</code>) and upper bounds (<code>ub</code>) of the relative risks need to be specified. The additional information about the study-design (<code>type</code>), the number of cases (<code>cases</code>), and participants or amount of person-time (<code>n</code>) is used for reconstructing the covariance of the log relative risk (or mean differences) using the method specified in the <code>covariance</code> argument (default is the Greenland and Longnecker’s method). A list of covariance matrices can be passed to the <code>Slist</code> argument when <code>covariance = "user"</code>.
+A two-stage procedure with REML estimation method is the default. A one-stage procedure (<code>proc = "1stage"</code>) and either ML estimator <code>method = "ml"</code> or a fixed-effect analysis <code>method = "fixed"</code> can be adopted. Residual heterogeneity can be modeled in a meta-regression analysis by specifying covariates in the <code>mods</code> argument. For example, a different curve depending on the study design can be specified with <code>mods = ~ type</code>. Finally, a list of parameters can be passed to the <code>control</code> argument to control the fitting process.</p>
+<p>The <strong>dosresmeta</strong> function returns an object of class “<code>dosresmeta</code>”” with the information from the dose–response meta-analytic model. The <code>print</code> and <code>summary</code> methods display and produce a summary of the content of a <code>dosresmeta object. The</code>predict` method facilitates the presentation of the results of a dose–response meta-analysis</p>
+<pre class="text"><code>R&gt; str(dosresmeta:::predict.dosresmeta)</code></pre>
+<pre><code>function (object, newdata, xref, expo = FALSE, xref_vec, ci.incl = TRUE, 
+    se.incl = FALSE, xref_pos = 1, delta, order = FALSE, ci.level = 0.95, 
+    safe_sort2stage = TRUE, ...)  </code></pre>
+<p>where object contains the results of the <code>dosresmeta</code> function. A new <code>data.frame</code> with the desired doses can be passed to the <code>newdata</code> argument for obtaining the corresponding predicted log relative risks. If not provided, the predictions will be calculated for the assigned dose values available from the studies. The <code>expo</code> argument can be set to <code>TRUE</code> to predict log relative risk and confidence intervals (unless <code>ci.incl = FALSE</code>) on the exponential scale. The reference value can be specified with the <code>xref</code> argument, or better, specifying the line of the newdata which serves as referent (<code>xref_pos</code> argument). For non-linear models, a vector needs to be provided in <code>xref_vec</code> instead of <code>xref</code>. The <code>delta</code> argument is useful for predicting the linear increase in the outcome for a delta increase in the exposure, and is thus only appropriate in a linear trend analysis. In the updated version of the <strong>dosresmeta</strong> package, a <code>blup</code> method has also been implemented for predicting the study-specific random-effects and hence the conditional curves.</p>
+<p>Additional functions can be listed</p>
+<pre class="text"><code>R&gt; ls(&quot;package:dosresmeta&quot;)</code></pre>
+<pre><code> [1] &quot;covar.logrr&quot;        &quot;covar.smd&quot;          &quot;dosresmeta&quot;         &quot;dosresmeta.control&quot;
+ [5] &quot;dosresmeta.fit&quot;     &quot;fpgrid&quot;             &quot;fracpol&quot;            &quot;gof&quot;               
+ [9] &quot;grl&quot;                &quot;hamling&quot;            &quot;vpc&quot;                &quot;waldtest&quot;          </code></pre>
+<p>Use <code>ls(getNamespace("dosresmeta"), all.names=TRUE)</code> for a complete list including hidden auxiliary functions.</p>
+</div>
+<div id="datasets" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Datasets<a href="methods.html#datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Several datasets from published dose–response meta-analyses and methodological articles have been included in the <strong>dosresmeta</strong> package. To get a list as in Table 1 with the names and description type</p>
+<pre class="text"><code>R&gt; data(package = &quot;dosresmeta&quot;)</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:data-table">Table 4.1: </span><span id="tab:data-table">Table 4.2: </span>Data sets available in the <strong>dosresmeta</strong> R package.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+alcohol_crc
+</td>
+<td style="text-align:left;">
+Eight published studies on the relation between alcohol intake and colorectal cancer <span class="citation">(<a href="#ref-orsini2011meta">Orsini, Li, et al., 2011</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+alcohol_cvd
+</td>
+<td style="text-align:left;">
+Six published studies on the relation between alcohol intake and cardiovascular disease risk <span class="citation">(<a href="#ref-liu2009two">Liu et al., 2009</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+alcohol_esoph
+</td>
+<td style="text-align:left;">
+Fourteen case-control studies on the relation between alcohol consumption and esophageal cancer <span class="citation">(<a href="#ref-rota2010random">Rota et al., 2010</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+alcohol_lc
+</td>
+<td style="text-align:left;">
+Four published studies on the relation between alcohol intake and lung cancer <span class="citation">(<a href="#ref-orsini2011meta">Orsini, Li, et al., 2011</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ari
+</td>
+<td style="text-align:left;">
+Five clinical trials on the relation between aripiprazole and schizophrenia <span class="citation">(<a href="#ref-crippa2016dose">Crippa &amp; Orsini, 2016</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bmi_rc
+</td>
+<td style="text-align:left;">
+Four case-control studies on the relation between Body Mass Index and renal cell cancer <span class="citation">(<a href="#ref-liu2009two">Liu et al., 2009</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cc_ex
+</td>
+<td style="text-align:left;">
+Case-control data on alcohol and breast cancer risk <span class="citation">(<a href="#ref-greenland1992methods">Greenland &amp; Longnecker, 1992</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ci_ex
+</td>
+<td style="text-align:left;">
+Cumulative incidence data on high-fat dairy food and colorectal cancer risk <span class="citation">(<a href="#ref-orsini2006generalized">Orsini et al., 2006</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coffee_cancer
+</td>
+<td style="text-align:left;">
+Eight prospective studies on the relation between coffee consumption and cancer mortality <span class="citation">(<a href="#ref-crippa2014coffee">Crippa, Discacciati, Larsson, Wolk, &amp; Orsini, 2014</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coffee_cvd
+</td>
+<td style="text-align:left;">
+Thirteen prospective studies on the relation between coffee consumption and cardiovascular mortality <span class="citation">(<a href="#ref-crippa2014coffee">Crippa et al., 2014</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coffee_mort
+</td>
+<td style="text-align:left;">
+Twenty-one prospective studies on the relation between coffee consumption and all-cause mortality <span class="citation">(<a href="#ref-crippa2014coffee">Crippa et al., 2014</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coffee_mort_add
+</td>
+<td style="text-align:left;">
+Additional two prospective studies on the relation between coffee consumption and all-cause mortality <span class="citation">(<a href="#ref-nilsson2012traditional">Nilsson et al., 2012</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coffee_stroke
+</td>
+<td style="text-align:left;">
+Eleven prospective studies on the relation between coffee consumption and stroke risk <span class="citation">(<a href="#ref-larsson2011coffee">Larsson &amp; Orsini, 2011</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fish_ra
+</td>
+<td style="text-align:left;">
+Six studies on the relation between fish consumption and rheumatoid arthritis risk <span class="citation">(<a href="#ref-di2014fish">Di Giuseppe, Crippa, Orsini, &amp; Wolk, 2014</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ir_ex
+</td>
+<td style="text-align:left;">
+Incidence-rate data on fiber intake and coronary heart disease risk <span class="citation">(<a href="#ref-orsini2006generalized">Orsini et al., 2006</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+milk_mort
+</td>
+<td style="text-align:left;">
+Eleven prospective studies on the relation between milk consumption and all-cause mortality <span class="citation">(<a href="#ref-larsson2015milk">Larsson, Crippa, Orsini, Wolk, &amp; Michaëlsson, 2015</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+milk_ov
+</td>
+<td style="text-align:left;">
+Nine studies on the relation between milk consumption and ovarian cancer <span class="citation">(<a href="#ref-larsson2006milk">Larsson, Orsini, &amp; Wolk, 2006</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+oc_breast
+</td>
+<td style="text-align:left;">
+Twenty-two case-control studies on the relation between oral contraceptives use and breast cancer <span class="citation">(<a href="#ref-berlin1993meta">Berlin et al., 1993</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+process_bc
+</td>
+<td style="text-align:left;">
+Ten studies on the relation between processed meat and bladder cancer <span class="citation">(<a href="#ref-crippa2016red">Crippa, Larsson, Discacciati, Wolk, &amp; Orsini, 2016</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+red_bc
+</td>
+<td style="text-align:left;">
+Twelve studies on the relation between red meat and bladder cancer <span class="citation">(<a href="#ref-crippa2016red">Crippa, Larsson, et al., 2016</a>)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sim_os
+</td>
+<td style="text-align:left;">
+Simulated data for one-stage dose-response meta-analysis <span class="citation">(<a href="#ref-crippa2018one">Crippa, Discacciati, Bottai, Spiegelman, &amp; Orsini, 2018</a>)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="sec:gof" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Goodness-of-fit<a href="methods.html#sec:gof" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The aim of Paper II was to address how to evaluate the goodness-of-fit in dose–response meta-analysis.
+The distance between observed and predicted data is often at the heart of model checking.
+Although we are working with linear regression models, features of aggregated dose–response data can complicate this comparison. The predicted curve is presented using a referent, <span class="math inline">\(x_\mathrm{ref}\)</span>, which may differ from the study-specific reference values. Thus the predicted and observed log relative risks can no longer be directly compared because their baseline group is not the same. Even in the case where the reference values are all the same and equal to <span class="math inline">\(x_\mathrm{ref}\)</span>, the covariance among the study-specific RRs and the heterogeneity across the studies adds further difficulties in evaluating if the chosen model provides a good summary of the observed data. The proposed tools for assessing the goodness-of-fit are presented in a fixed-effect analysis where meta-regression models as in <a href="background.html#eq:rmmra2">(2.20)</a> are typically employed to explain the observed heterogeneity. We consider relevant measures, tests, and graphical tools that take into account the correlation of the observed data.</p>
+<div id="deviance" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Deviance<a href="methods.html#deviance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The first natural measure of goodness-of-fit is a comparison between the predicted and observed data points, i.e. the non-referent log relative risks. This can be done by analyzing the residual term errors, which are defined by the difference between the observed log RRs, <span class="math inline">\(\mathbf{y}_i\)</span>, and the marginal prediction
+<span class="math display" id="eq:residual">\[\begin{equation}
+\boldsymbol{\hat e_i} = \mathbf{y}_i - \mathbf{X}_i \widetilde{\mathbf{X}}_i \boldsymbol{\hat \beta}
+\tag{4.1}
+\end{equation}\]</span>A summary for the error terms is the deviance
+<span class="math display" id="eq:deviance">\[\begin{equation}
+D = \sum_{i=1}^I \left(\mathbf{y}_i - \mathbf{X}_i \widetilde{\mathbf{X}}_i \boldsymbol{\hat \beta} \right)^\top \mathbf{S}_i^{-1} \left(\mathbf{y}_i -\mathbf{X}_i \widetilde{\mathbf{X}}_i \boldsymbol{\hat \beta} \right) = \sum_{i=1}^I \boldsymbol{\hat e_i}^\top \mathbf{S}_i^{-1} \boldsymbol{\hat e_i}
+\tag{4.2}
+\end{equation}\]</span></p>
+<p>The deviance <span class="math inline">\(D\)</span> measures the total squared deviation between observed and predicted data taking into account the covariance matrices <span class="math inline">\(\mathbf{S}_i\)</span> of the error terms. It is usually referred to as generalized residual sum of squares (GRSS) <span class="citation">(<a href="#ref-draper2014applied">Draper &amp; Smith, 2014</a>)</span>. Decreasing values of <span class="math inline">\(D\)</span> indicate a better agreement between reported and fitted log RRs, with 0 being the lower bound that corresponds to perfect agreement (saturated model).</p>
+<p>The <span class="math inline">\(D\)</span> statistic can be used as a test for model specification. Under the null hypothesis that the model is correctly specified, <span class="math inline">\(D\)</span> follows a <span class="math inline">\(\chi^2\)</span> distribution with df = <span class="math inline">\(\sum_{i=1}^I J_i - pm\)</span>. This is equivalent to test if the residual variance, corrected for the correlation of the error terms, is larger than expected assuming that the dose–response model is correct. A small <span class="math inline">\(p\)</span> value can be interpreted as evidence that the fitted model fails in accounting the observed variation in the log relative risks. As for the <span class="math inline">\(Q\)</span> test, the deviance has no upper bound and is thus difficult to interpret the absolute value of <span class="math inline">\(D\)</span>.</p>
+</div>
+<div id="coefficient-of-determination" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Coefficient of determination<a href="methods.html#coefficient-of-determination" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To complement the <span class="math inline">\(D\)</span> statistic (and the corresponding test), the coefficient of determination, <span class="math inline">\(R^2\)</span>, can be used as a descriptive measure of goodness-of-fit <span class="citation">Kvålseth (<a href="#ref-kvaalseth1985cautionary">1985</a>)</span>. The <span class="math inline">\(R^2\)</span> is the complement to the unit of the ratio between the <span class="math inline">\(\textrm{GRSS}\)</span> and the generalized sum of squares, <span class="math inline">\(\textrm{GTSS} = \sum_{i=1}^I\mathbf{y}_i^\top \mathbf{S}_i^{-1} \mathbf{y}_i\)</span>. Because dose–response models do not have the intercept term, the <span class="math inline">\(R^2\)</span> can be defined as in <span class="citation">Theil (<a href="#ref-theil1958economic">1958</a>)</span>
+<span class="math display" id="eq:R2">\[\begin{equation}
+R^2 = 1 - \frac{\textrm{GRSS}}{\textrm{GTSS}} = 1 - \frac{\sum_{i=1}^I \left(\mathbf{y}_i - \mathbf{X}_i \widetilde{\mathbf{X}}_i \boldsymbol{\hat \beta} \right)^\top \mathbf{S}_i^{-1} \left(\mathbf{y}_i - \mathbf{X}_i \widetilde{\mathbf{X}}_i \boldsymbol{\hat \beta} \right)}{\sum_{i=1}^I \mathbf{y}_i^\top \mathbf{S}_i^{-1} \mathbf{y}_i}
+\tag{4.3}
+\end{equation}\]</span>
+<span class="math inline">\(R^2\)</span> is a dimensionless number that is bounded between 0 and 1 and can be generally interpreted as the proportion of the generalized total sum of squares explained by the dose–response model and study-level covariates. The lower bound 0 corresponds to the case where all the <span class="math inline">\(\beta\)</span> coefficients are equal to 0 and therefore the model is not able to explain the variability in the observed log relative risks. Contrary, the upper bound 1 indicates a perfect agreement between reported and fitted data.</p>
+<p>By construction the <span class="math inline">\(R^2\)</span> can not decrease as the number of regression coefficients increases. A penalized, or adjusted, version that takes into account this behavior can be defined
+<span class="math display" id="eq:R2adj">\[\begin{equation}
+R^2_{\textrm{adj}} = 1 - \frac{\sum_{i=1}^I J_i}{\sum_{i=1}^I J_i-m} \left(1 - R^2 \right)
+\tag{4.4}
+\end{equation}\]</span>
+Possibly, a low <span class="math inline">\(R^2\)</span> may indicate that more flexible transformations of the exposure are needed, or that there is considerable residual variability that might be explained by study-level covariates.</p>
+</div>
+<div id="visual-tools" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Visual tools<a href="methods.html#visual-tools" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The visual assessment of the goodness-of-fit may reveal specific patterns in the data that might otherwise go undetected by only looking at summary measures such as the deviance and the coefficient of variation <span class="citation">(<a href="#ref-kvaalseth1985cautionary">Kvålseth, 1985</a>)</span>. The graphical comparison can sometimes be cumbersome because different factors may affect such analysis. The aggregated dose–response data are presented using one group as comparison. This feature has two important consequences when deducing an overall trend from the reported (log) relative risks.
+The first is that different parameterizations, or models, can be graphically compared only if the predicted risk for the reference category is similar. The second involves the correlation of the modelled data points, which makes it difficult to evaluate if a specific model fits the reported data.</p>
+<p>To illustrate both problems, I consider IPD from one of the registers involved in the Surveillance, Epidemiology, and End Results (SEER) Program (<a href="https://seer.cancer.gov" class="uri">https://seer.cancer.gov</a>), and focus on the association between age at diagnosis and breast cancer mortality. Using 35, 60, 70 years as cut points, I modelled age using 5 categories in a Poisson model adjusting for potential confounders and produced aggregated dose–response results in Table <a href="methods.html#tab:breast-ad">4.3</a>, where the first category served as referent.</p>
+<table style="width:100%;">
+<caption><span id="tab:breast-ad">Table 4.3: </span><span id="tab:breast-ad">Table 4.4: </span> Aggregated dose–response data on the adjusted association between age and breast cancer mortality based on one registry from the SEER program using the first age category as referent.</caption>
+<colgroup>
+<col width="25%" />
+<col width="13%" />
+<col width="9%" />
+<col width="6%" />
+<col width="13%" />
+<col width="4%" />
+<col width="13%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">Age category</th>
+<th align="center">Mean age</th>
+<th align="center">Cases</th>
+<th align="center">Person-years</th>
+<th align="center">IRR</th>
+<th align="center">95% CI</th>
+<th align="center">log IRR</th>
+<th align="center">SE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="center">[20,35]</td>
+<td align="center">32</td>
+<td align="center">56</td>
+<td align="center">2099</td>
+<td align="center">1.0</td>
+<td align="center">—</td>
+<td align="center">0</td>
+<td align="center">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">relevel(age_cat, 1)(35,60]</td>
+<td align="center">(35,60]</td>
+<td align="center">50</td>
+<td align="center">451</td>
+<td align="center">37585</td>
+<td align="center">0.7</td>
+<td align="center">(0.51, 0.90)</td>
+<td align="center">0</td>
+<td align="center">0.14</td>
+</tr>
+<tr class="odd">
+<td align="left">relevel(age_cat, 1)(60,70]</td>
+<td align="center">(60,70]</td>
+<td align="center">66</td>
+<td align="center">220</td>
+<td align="center">20591</td>
+<td align="center">0.7</td>
+<td align="center">(0.53, 0.96)</td>
+<td align="center">0</td>
+<td align="center">0.15</td>
+</tr>
+<tr class="even">
+<td align="left">relevel(age_cat, 1)(70,97]</td>
+<td align="center">(70,97]</td>
+<td align="center">77</td>
+<td align="center">215</td>
+<td align="center">17897</td>
+<td align="center">0.8</td>
+<td align="center">(0.57, 1.04)</td>
+<td align="center">0</td>
+<td align="center">0.15</td>
+</tr>
+</tbody>
+</table>
+<p>Using the methodology presented in Section <a href="background.html#sec:1st-stage">2.3.1</a>, I estimated a linear trend and graphically compared the predicted curve and the modelled data (left panel of Figure <a href="methods.html#fig:visual-problem">4.4</a>). While the empirical log RRs may suggest an inverse association between age and breast cancer mortality, the estimated linear trend indicates opposite conclusions (a 0.17% increase in mortality for every 5-year increase of age at diagnosis). The linear trend does not seem to properly fit the data since the fitted line doesn’t event pass through the reported log RRs. The problem is that there are few cases in the reference age category and so the log RRs are typically larger. By changing the group comparison to the second age category, this issue is partially solved (right panel of Figure <a href="methods.html#fig:visual-problem">4.4</a>). To address the further issue of the covariance, we proposed graphical tools based on the analysis of the decorrelated residuals.</p>
+<div class="figure"><span style="display:block;" id="fig:visual-problem"></span>
+<img src="thesis_files/figure-html/visual-problem-1.png" alt="Comparison between observed and fitted data, changing the comparison group from the first age category (left panel) to the second one (right panel), based on the aggregated data on the association between age and breast cancer mortality presented in Table \@ref(tab:breast-ad)." width="672" />
+<p class="caption">
+Figure 4.4: Comparison between observed and fitted data, changing the comparison group from the first age category (left panel) to the second one (right panel), based on the aggregated data on the association between age and breast cancer mortality presented in Table <a href="methods.html#tab:breast-ad">4.3</a>.
+</p>
+</div>
+<p>The residuals can be decorrelated using the Cholesky factorization of the covariance matrices <span class="math inline">\(\mathbf{S}_i = \mathbf{C}_i\mathbf{C}_i^\top\)</span>, with <span class="math inline">\(\mathbf{C}_i\)</span> being a lower <span class="math inline">\(J_i \times J_i\)</span> triangular matrix. The decorrelated residuals <span class="math inline">\(\boldsymbol{\hat e_i}^*\)</span> are then calculated as
+<span class="math display" id="eq:decor-res">\[\begin{equation}
+\boldsymbol{\hat e_i}^* = \mathbf{C}_i^{-1} \left(\mathbf{y}_i - \mathbf{X}_i \widetilde{\mathbf{X}}_i \boldsymbol{\hat \beta} \right) = \mathbf{C}_i^{-1}\boldsymbol{\hat e_i}
+\tag{4.5}
+\end{equation}\]</span>
+and plotted against the exposure. Such a graphical analysis is the equivalent to a residual vs. predictors/predicted outcome plot after a model estimated through ordinary least squares. Since the variables in the plot are transformed, the actual value of the decorrelated residuals is not directly interpretable. However, it is still possible to detect specific patterns for the residuals over the exposure range. In such a case, the plot can indicate lack of fit of the chosen model for select exposure values. Overlaying a locally weighted scatterplot smoothing (LOWESS) may help to visualize possible patterns, while a different shape or color for the residuals can distinguish them according to study-level covariates in case of meta-regression models.</p>
+</div>
+</div>
+<div id="sec:Rb" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> A new measure of heterogeneity<a href="methods.html#sec:Rb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One of the possible reasons for large values of <span class="math inline">\(D\)</span> or similarly small values of <span class="math inline">\(R^2\)</span> is the presence of heterogeneity in the dose–response associations. The measures of heterogeneity presented in Section <a href="background.html#sec:measures-het">2.1.3</a>, namely <span class="math inline">\(\hat R_I\)</span> and <span class="math inline">\(I^2\)</span> were derived based on the assumption of homogeneity for the error variance terms <span class="math inline">\(v_i\)</span>, which is unlikely to be met in applications. To illustrate this point, let us consider the two hypothetical distributions for the within-study error terms in Table <a href="methods.html#tab:hyp-vi">4.5</a>. The distribution of <span class="math inline">\(v_i\)</span> in the first example (Analysis A) is much more homogeneous compared to the second scenario (Analysis B). The coefficient of variation for the <span class="math inline">\(v_i\)</span> in the second example is 20 times higher than the corresponding number in the first scenario. While it seems reasonable to assume homogeneity of the <span class="math inline">\(v_i\)</span> for the Analysis A, in the second case this hypothesis is not appropriate. Nonetheless, both <span class="math inline">\(\hat R_I\)</span> and <span class="math inline">\(I^2\)</span> would summarize the two distributions with a single common number.</p>
+<table>
+<caption><span id="tab:hyp-vi">Table 4.5: </span><span id="tab:hyp-vi">Table 4.6: </span> Hypothetical distributions of within-study errors
+in two meta-analyses of 5 studies.</caption>
+<thead>
+<tr class="header">
+<th align="center">Analysis</th>
+<th align="center"><span class="math inline">\(v_1, \dots, v_5\)</span></th>
+<th align="center"><span class="math inline">\(CV_{v_i}\)</span></th>
+<th align="center"><span class="math inline">\(s_1^2\)</span></th>
+<th align="center"><span class="math inline">\(s_2^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A</td>
+<td align="center">5, 5.2, 4.9, 5.3, 4.8</td>
+<td align="center">0</td>
+<td align="center">5.03</td>
+<td align="center">5.0</td>
+</tr>
+<tr class="even">
+<td align="center">B</td>
+<td align="center">4, 17, 15, 2, 3.8</td>
+<td align="center">1</td>
+<td align="center">5.02</td>
+<td align="center">4.4</td>
+</tr>
+</tbody>
+</table>
+<div id="definition-and-properties" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Definition and properties<a href="methods.html#definition-and-properties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The available measures relate the between-study heterogeneity to the overall variability, whose definition also varies across studies. A different approach consists of measuring the impact of heterogeneity in determining the variance of the combined effect in a random-effects analysis. This quantity depends on the <span class="math inline">\(\tau^2\)</span> and on the variance of the mean <span class="math inline">\(\hat \beta\)</span>, quantities that don’t require the assumption of homogeneity for the within-study error terms.</p>
+<p>To determine how <span class="math inline">\(\tau^2\)</span> contributes to <span class="math inline">\(\widehat{\textrm{Var}} \left(\hat \beta \right)\)</span>, we consider the hypothetical case where all the estimates <span class="math inline">\(\hat \beta_i\)</span> are reported with no error, i.e. <span class="math inline">\(v_i = 0 \; \forall i = 1, \dots, I\)</span>. The weights used in the meta-analytic model depends only on <span class="math inline">\(\tau^2\)</span>, and following Equation <a href="background.html#eq:avgvarbeta">(2.3)</a> the variance of the combined effect is <span class="math inline">\(\widehat{\textrm{Var}} \left(\hat \beta \right) = \left(\sum_{i = 1}^I \hat \tau^2 \right)^{-1} = \hat \tau^2/I\)</span>.
+In the more realistic case where <span class="math inline">\(v_i &gt; 0\)</span>, the variance of <span class="math inline">\(\hat \beta\)</span> will increase to incorporate the uncertainty in the reported estimates. The contribution of the heterogeneity is still defined by <span class="math inline">\(\hat \tau^2/I\)</span>. The new measure of heterogeneity, <span class="math inline">\(\hat R_b\)</span>, can be written as
+<span class="math display" id="eq:Rb">\[\begin{equation}
+\hat R_b = \frac{\hat \tau^2}{I \widehat{\textrm{Var}} \left(\hat \beta \right)} = \frac{\hat \tau^2}{I/\left( \sum_{i = 1}^I \frac{1}{v_i + \hat \tau^2} \right)} = \frac{1}{I}\sum_{i = 1}^I \frac{\hat \tau^2}{\hat \tau^2 + v_i}
+\tag{4.6}
+\end{equation}\]</span></p>
+<p>The <span class="math inline">\(\hat R_b\)</span> is a dimensionless number that can be expressed as a percentage, ranging from 0% (corresponding to <span class="math inline">\(\hat \tau^2 = 0\)</span>, i.e. no observed heterogeneity) to 100%, for the hypothetical case where all the effects are estimated with no error. The proposed measure is defined as a function of the estimated heterogeneity (<span class="math inline">\(\hat \tau^2\)</span>), the number of studies (<span class="math inline">\(I\)</span>), and the within-study error terms (<span class="math inline">\(v_i\)</span>). It satisfies the criteria required for a measure of heterogeneity <span class="citation">(<a href="#ref-higgins2002quantifying">J. Higgins &amp; Thompson, 2002</a>)</span>: it is a non-decreasing function of <span class="math inline">\(\hat \tau^2\)</span>, it is invariant to scale transformation of the estimates, and is not intrinsically affected by the number of studies included in the analysis. Similarly to <span class="math inline">\(\hat R_I\)</span> and <span class="math inline">\(I^2\)</span>, the proposed measure is a function on the within-error terms <span class="math inline">\(v_i\)</span> and so it tends to 1 in case of meta-analysis of very precise estimates, even for relative small values of <span class="math inline">\(\hat \tau^2\)</span>. As already mentioned in Section <a href="background.html#sec:measures-het">2.1.3</a>, the use of the between-studies coefficient of variation can complement these measures <span class="citation">(<a href="#ref-takkouche1999evaluation">Takkouche et al., 1999</a>)</span>.
+The right hand of Equation <a href="methods.html#eq:Rb">(4.6)</a> expresses <span class="math inline">\(\hat R_b\)</span> as an average of the ratios of the <span class="math inline">\(\hat \tau^2\)</span> to the study-specific overall variance <span class="math inline">\(v_i + \hat \tau^2\)</span>. It is easy to derive that <span class="math inline">\(\hat R_b\)</span> coincides with the definition of <span class="math inline">\(\hat R_I\)</span> and <span class="math inline">\(I^2\)</span> in case of homogeneity of the <span class="math inline">\(v_i\)</span>. When the within-errors vary across study, the difference between <span class="math inline">\(\hat R_b\)</span> and <span class="math inline">\(I^2\)</span> will depend on the actual values of <span class="math inline">\(v_i\)</span>, while it can be proven that <span class="math inline">\(\hat R_b \le \hat R_I\)</span>.</p>
+<p>An estimate of the between-study heterogeneity is required for the computation of <span class="math inline">\(\hat R_b\)</span> as well for the alternative measures <span class="math inline">\(\hat R_I\)</span> and <span class="math inline">\(I^2\)</span>. The moment-based estimator presented in Equation <a href="background.html#eq:tau2DL">(2.5)</a> is a standard choice in many applied meta-analyses and it has the advantage of having a closed formulation. In addition, the estimator is consistent <span class="citation">(<a href="#ref-jackson2010extending">Jackson, White, &amp; Thompson, 2010</a>)</span>. Using this estimation method, <span class="math inline">\(\hat R_b\)</span> can be expressed as a function of the <span class="math inline">\(Q\)</span> statistic
+<span class="math display" id="eq:RbQ">\[\begin{equation}
+\hat R_b = \frac{1}{I} \sum_{i = 1}^I \frac{Q - (I-1)}{Q + a_i - (I - 1)}
+\tag{4.7}
+\end{equation}\]</span>
+with <span class="math inline">\(a_i = v_i \left(\sum_{i = 1}^I w_i - \sum_{i = 1}^Iw_i^2/\sum_{i = 1}^I w_i \right)\)</span>. The asymptotic variance for <span class="math inline">\(\hat R_b\)</span> can be derived by using the delta method on the relation @ref{eq:RbQ}
+<span class="math display" id="eq:var-Rb">\[\begin{equation}
+\widehat{\textrm{Var}} \left(\hat R_b \right) \approx \left(  \frac{1}{I} \sum_{i = 1}^I \frac{a_i}{(Q + a_i - (I-1))^2} \right)^2 \textrm{Var}(Q)
+\tag{4.8}
+\end{equation}\]</span>
+The formula for <span class="math inline">\(\textrm{Var}(Q) = 2(I-1) + 4\left(S_1 - \frac{S_2}{S_1}\right)\tau^2 + 2\left(S_2 - 2\frac{S_3}{S_1} + \frac{S_2^2}{S_1^2} \right)\)</span>, with <span class="math inline">\(S_r = \sum_{i = 1}^I w_i^r\)</span>, was first presented by <span class="citation">Biggerstaff &amp; Tweedie (<a href="#ref-biggerstaff1997incorporating">1997</a>)</span>.</p>
+<p>When the number of studies is large, <span class="math inline">\(\hat R_b\)</span> is asymptotically normally distributed and thus Wald-type confidence interval can be constructed <span class="math inline">\(\hat R_b \mp z_{1-\alpha/2} \sqrt{ \widehat{\textrm{Var}} \left(\hat R_b \right)}\)</span>.</p>
+</div>
+</div>
+<div id="sec:pwa" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> A point-wise approach<a href="methods.html#sec:pwa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Measures of heterogeneity are frequently employed in applied works. In a dose–response meta-analysis, however, there are two aspects of heterogeneity that can not be captured using standard methods. More specifically, in a two-stage analysis the same functional transformations <span class="math inline">\(g_1, \dots, g_p\)</span> need to be defined for all the studies so that the regression coefficients can be properly combined by meta-analysis.
+This may have important consequences in case the chosen dose–response model adequately fits only a subset of the analyzed studies. To illustrate this aspect, I considered a subset of 4 studies on the association between milk consumption (ml/day) and all-cause mortality <span class="citation">(<a href="#ref-larsson2015milk">Larsson et al., 2015</a>)</span>. I modelled the individual curves using FP2 and selected in each study the combination of power terms which maximized the log likelihood (or equivalently with the minimum AIC). The chosen power terms in the individual analyses differ although the predicted curves describe a similar association (Figure <a href="methods.html#fig:milk-sub">4.5</a>). Forcing a unique set of power terms may decrease the fit of some of the study-specific analyses and thus produce more unstable estimates for the dose–response parameters.</p>
+<p>Another difficulty may be encountered in uniformly defining the <span class="math inline">\(g\)</span> transformations across the studies. For instance, we might decide to model the previous association between milk consumption and mortality using RCS. A percentile approach is commonly adopted for choosing where to place the <span class="math inline">\(\mathbf{k}\)</span> in Equation <a href="background.html#eq:rcs">(2.31)</a> <span class="citation">(<a href="#ref-harrell2013regression">Harrell, 2013</a>)</span>. The first and third knots are located at fixed percentiles, generally at the 10-th and 90-th percentiles of the exposure distribution, while the median exposure value is chosen for the remaining knot.
+If the exposure distributions largely vary (especially in terms of range definition), as it is in this case, it may not be possible to equally locate the knots in all the studies. Indeed, in our example only one study considered dose levels higher than the upper knot (433 ml/day). As a consequence, the second spline transformation for the other studies will be equal 0 and the model is not estimable (the design matrix is not invertible).</p>
+<p>A related problem directly affects the prediction of the pooled log relative risks. The maximum dose levels varies largely across studies, with values 715, 441, 369, 146 ml/day.
+The predictions from the second stage analysis, however, are obtained using the combined <span class="math inline">\(\boldsymbol{\hat \beta}\)</span>, which disregards the information about the exposure. All the studies contribute in predicting the log relative risks, even if some of them only reported results for low exposure values. In such a way, the combined curve may be severely affected by these extrapolations.</p>
+<div class="figure"><span style="display:block;" id="fig:milk-sub"></span>
+<img src="thesis_files/figure-html/milk-sub-1.png" alt="Dose--response associations between milk consumption (ml/day) and all-cause mortality in 4 studies. The curves are modelled using fractional polynomials with the sets of power terms $p$ (reported in the title) chosen by maximizing the study-specific likelihoods. The results are presented on the log scale using the observed reference values as comparators." width="672" />
+<p class="caption">
+Figure 4.5: Dose–response associations between milk consumption (ml/day) and all-cause mortality in 4 studies. The curves are modelled using fractional polynomials with the sets of power terms <span class="math inline">\(p\)</span> (reported in the title) chosen by maximizing the study-specific likelihoods. The results are presented on the log scale using the observed reference values as comparators.
+</p>
+</div>
+<p>A point-wise approach for meta-analysis of aggregated dose–response data may properly address the described issues.
+A point-wise approach was first presented by <span class="citation">Sauerbrei &amp; Royston (<a href="#ref-sauerbrei2011new">2011</a>)</span> for meta-analysis of continuous covariates based on IPD. The strategy consists of separately estimating the study-specific curves and, based on them, calculating the predicted log relative risks for selected exposure values. The combined curve is obtained by averaging the predicted relative risks instead of calculating them from the combined regression coefficients. The described methodology has the advantage of fitting potential diverse curves across the studies, and limiting the study-specific predicted log relative risks to the observed exposure range.</p>
+<div id="estimation-and-prediction-of-study-specific-curves" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Estimation and prediction of study-specific curves<a href="methods.html#estimation-and-prediction-of-study-specific-curves" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The first step of a point-wise approach is similar to the methodology presented in Section <a href="background.html#sec:1st-stage">2.3.1</a> with the difference that the <span class="math inline">\(g\)</span> transformations in the design matrices @ref(eq:des.matrix) are subscripted by the study index <span class="math inline">\(i\)</span>, to highlight that they may differ across the studies, also in terms of number (<span class="math inline">\(p_i\)</span>)
+<span class="math display">\[\begin{equation}
+\mathbf{X}_i=\left[
+\begin{array}{ccc}
+g_{i1}(x_{i1}) - g_{i1}(x_{i0}) &amp; \dots &amp; g_{ip_i}(x_{ip}) - g_{ip_i}(x_{i0}) \\
+\vdots &amp;  &amp; \vdots \\
+g_{i1}(x_{iJ_i}) -  g_{i1}(x_{i0}) &amp; \dots &amp; g_{ip_i}(x_{iJ_i}) -  g_{ip_i}(x_{i0}) \\
+\end{array}
+\right]
+\end{equation}\]</span>
+For example, different power terms for FP2 can be chosen or, for a RCS analysis, the knots can be located separately in each study. Potentially, a mixture of curves could be also estimated across the study in order to improve the fit of the individual dose–response analyses. The regression coefficients are then estimated using GLS estimators presented in Equation <a href="background.html#eq:gls">(2.16)</a>.</p>
+<p>Once the curves have been estimated, the results of the first step analysis are presented in terms of predicted log relative risks for a set of <span class="math inline">\(n_i\)</span> exposure values <span class="math inline">\(\mathbf{x}_{n_i}\)</span> using a suitable common value <span class="math inline">\(x_\mathrm{ref}\)</span> as comparator. The index <span class="math inline">\(i\)</span> is used to highlight that the chosen dose values may differ across the studies. In particular, the predictions in each study can be limited to the observed exposure range: <span class="math inline">\(\max \left( \mathbf{x}_{n_i} \right) \le \max \left( \mathbf{x_i} \right)\)</span>.
+<span class="math display" id="eq:predv-pwa" id="eq:pred-pwa">\[\begin{align}
+\hat {\boldsymbol y}_i &amp;= \mathbf{X}_{n_i} \boldsymbol{\hat \beta_i}
+\tag{4.9} \\
+\hat{\boldsymbol{v}}_i &amp;= \mathrm{diag}\left( \mathbf{X}_{n_i} \widehat{\textrm{Var}} \left( \boldsymbol{\hat \beta_i} \right) \mathbf{X}_{n_i}^\top \right)
+\tag{4.10}
+\end{align}\]</span>
+with formulas similar to those presented in Equation <a href="background.html#eq:pred">(2.24)</a> and <a href="background.html#eq:varpred">(2.25)</a>, with the notable difference that the predictions are based on the study-specific <span class="math inline">\(\boldsymbol{\hat \beta_i}\)</span> rather than the mean <span class="math inline">\(\boldsymbol{\hat \beta}\)</span> coefficients.</p>
+</div>
+<div id="averaging-of-doseresponse-predictions" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Averaging of dose–response predictions<a href="methods.html#averaging-of-doseresponse-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In a point-wise strategy, the combined dose–response curve is derived by pooling the study-specific predicted log RRs derived in Equation <a href="methods.html#eq:pred-pwa">(4.9)</a>. The second step consists of <span class="math inline">\(n = \max(n_i)\)</span> univariate meta-analyses where the effect sizes are the elements in <span class="math inline">\(\hat {\boldsymbol y}_i\)</span> with the within-error variances <span class="math inline">\(\hat{\boldsymbol{v}}_i\)</span>.
+The combined predicted (log) relative risks are estimated using the weighted average presented in Equation <a href="background.html#eq:avgbeta">(2.2)</a>.</p>
+<p>As a final result, the combined dose–response curve is graphically presented as a smooth function of the combined predicted relative risks for the chosen <span class="math inline">\(n\)</span> dose levels. In addition, all the results of the univariate meta-analyses can be pointwisely presented, such as estimates of the heterogeneity <span class="math inline">\(\tau^2\)</span> and related measures (<span class="math inline">\(\hat R_b\)</span>, <span class="math inline">\(I^2\)</span>, and <span class="math inline">\(\hat R_i\)</span>), the <span class="math inline">\(Q\)</span> statistic, and the study-specific weights, with the potential of a much richer set of results.</p>
+</div>
+</div>
+<div id="sec:one-stage" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> A one-stage model<a href="methods.html#sec:one-stage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The study-specific dose–response analyses in a standard two-stage or alternative point-wise approach suffer from the limited number of data points. Most of the individual studies present results for 2 to 4 non-referent exposure categories, but cases where dichotomization of the exposure occurred are not rare <span class="citation">(<a href="#ref-turner2010categorisation">Turner et al., 2010</a>)</span>. In the latter case, only dose–response models parameterized by <span class="math inline">\(p = 1\)</span> coefficient can be estimated (e.g. linear trend). Indeed, a standard requirement for meta-analysis of non-linear curves is that the studies provide at least two non-referent relative risks.</p>
+<p>The extension of the one-stage approach to a random-effects meta-analysis may overcome the exclusions of studies with limited number of individual data points. A one-stage approach is conceptually easier since the entire analysis can be formulated in a single statistical model. Flexible curves characterized by multiple parameters (<span class="math inline">\(p &gt; 3\)</span>) can also be easily accommodated, so that more elaborate research questions can be answered, without losing the information from those studies usually excluded in a two-stage analysis.</p>
+<div id="model-definition" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Model definition<a href="methods.html#model-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A one-stage dose–response meta-analysis can be written in the form of a linear mixed-effects model
+<span class="math display" id="eq:onestage">\[\begin{equation}
+\mathbf{y}_{i} = \mathbf{X}_{i} \boldsymbol{\beta} + \mathbf{Z}_{i}  \mathbf{b}_i + \boldsymbol{\varepsilon}_{i}
+\tag{4.11}
+\end{equation}\]</span>
+where the terms <span class="math inline">\(\mathbf{y}_{i}\)</span>, <span class="math inline">\(\mathbf{X}_{i}\)</span>, and <span class="math inline">\(\boldsymbol{\varepsilon}_{i}\)</span> are defined exactly as those presented in the first step of a two-stage analysis (Equation <a href="background.html#eq:drmodel">(2.13)</a>). The quantities <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\mathbf{b}_i\)</span>, instead, are the population average parameter and unobserved random-effects as defined in the second step (Equation <a href="background.html#eq:rmma">(2.18)</a>). The additional <span class="math inline">\(\mathbf{Z}_{i}\)</span> is the <span class="math inline">\(n_i \times p\)</span> design matrix for the random-effects and coincides with <span class="math inline">\(\mathbf{X}_{i}\)</span>.
+Assuming a multivariate distribution for the random-effects terms, the marginal model for a one-stage analysis is
+<span class="math display" id="eq:marginal-os">\[\begin{equation}
+\mathbf{y}_{i} \sim \mathcal{N} \left( \mathbf{X}_{i} \boldsymbol{\beta},  \mathbf{Z}_{i} \boldsymbol{\Psi} \mathbf{Z}_{i}^\top  + \mathbf{S}_i \right)
+\tag{4.12}
+\end{equation}\]</span>
+Similarly, the conditional model is defined as
+<span class="math display" id="eq:conditional-os">\[\begin{equation}
+\mathbf{y}_{i} \mid \boldsymbol{b}_i \sim \mathcal{N} \left( \mathbf{X}_{i} \boldsymbol{\beta} + \mathbf{Z}_{i} \boldsymbol{b}_i,  \mathbf{S}_i \right)
+\tag{4.13}
+\end{equation}\]</span></p>
+<p>Note that the conditional and marginal models are now defined for the log relative risks rather than the dose–response coefficients. In particular, the definition of the marginal variance <span class="math inline">\(\boldsymbol{\Sigma}_i  = \mathbf{Z}_{i} \boldsymbol{\Psi} \mathbf{Z}_{i}^\top  + \mathbf{S}_i\)</span> is quite different. It depends not only on the within and between components but also on the corresponding dose value <span class="math inline">\(x_{ij}\)</span> (or equivalently <span class="math inline">\(z_{ij}\)</span>) associated with <span class="math inline">\(y_{ij}\)</span>.</p>
+<p>Meta-regression models can be estimated by including in <span class="math inline">\(\mathbf{X}_{i}\)</span> the interaction terms between the <span class="math inline">\(p\)</span> transformations of the exposure variable and study-level covariates, while leaving unchanged the definition of the <span class="math inline">\(\mathbf{Z}_{i}\)</span> matrix for the random-effects. Assuming a quadratic curve and a binary study-level covariate <span class="math inline">\(u_i\)</span>, for example, the design matrices for the fixed- and random-effects can be written as
+<span class="math display">\[\begin{equation*}
+\mathbf{X}_i =
+    \begin{bmatrix}
+        x_{i1} - x_{i0}  &amp; x_{i1}^2 - x_{i0}^2 &amp; \left(x_{i1} - x_{i0}\right) u_i &amp;  \left( x_{i1}^2 - x_{i0}^2\right) u_i \\
+        \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+        x_{iJ_i} - x_{i0}  &amp; x_{iJ_i}^2 - x_{i0}^2 &amp; \left(x_{iJ_i} - x_{i0}\right) u_i  &amp; \left(x_{iJ_i}^2 - x_{i0}^2\right) u_i \\
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\mathbf{Z}_i =
+    \begin{bmatrix}
+        x_{i1} - x_{i0}  &amp; x_{i1}^2 - x_{i0}^2 \\
+        \vdots &amp; \vdots \\
+        x_{iJ_i} - x_{i0}  &amp; x_{iJ_i}^2 - x_{i0}^2 \\
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+</div>
+<div id="estimation-hypothesis-testing-and-model-comparison" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Estimation, hypothesis testing, and model comparison<a href="methods.html#estimation-hypothesis-testing-and-model-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The parameters to be estimated are the <span class="math inline">\(m\times p\)</span> fixed effects and the <span class="math inline">\(p \times (p+1)/2\)</span> elements of the between-study variance matrix. We consider likelihood-based estimators that maximize either the log-likelihood of model <a href="methods.html#eq:conditional-os">(4.13)</a>
+<span class="math display" id="eq:logLik-os">\[\begin{equation}
+\begin{split}
+\ell \left( \boldsymbol{\beta}, \boldsymbol{\xi} \right) = &amp;
+-\frac{1}{2} n \log(2\pi)  -\frac{1}{2} \sum_{i=1}^I \log | \boldsymbol{\Sigma}_i \left( \boldsymbol{\xi} \right) | + \\ &amp; -\frac{1}{2}\sum_{i=1}^I \left[ \left( \mathbf{y}_i -  \mathbf{X}_i \boldsymbol{\beta} \right)^\top \left( \boldsymbol{\Sigma}_i \left( \boldsymbol{\xi} \right) \right)^{-1} \left( \mathbf{y}_i -  \mathbf{X}_i \boldsymbol{\beta} \right) \right]
+\end{split}
+\tag{4.14}
+\end{equation}\]</span>
+or the corresponding restricted version
+<span class="math display" id="eq:logLikR-os">\[\begin{equation}
+\begin{split}
+\ell_R \left( \boldsymbol{\xi} \right) = &amp;
+-\frac{1}{2} (n - p) \log(2\pi)  - \frac{1}{2} \sum_{i=1}^I \log | \boldsymbol{\Sigma}_i \left( \boldsymbol{\xi} \right) |  - \frac{1}{2} \log \left| \sum_{i=1}^I \mathbf{X}_i^\top \left( \boldsymbol{\Sigma}_i \left( \boldsymbol{\xi} \right) \right)^{-1}  \mathbf{X}_i  \right| + \\
+&amp;-\frac{1}{2}\sum_{i=1}^I \left[ \left( \mathbf{y}_i -  \mathbf{X}_i \boldsymbol{\hat \beta} \right)^\top \left( \boldsymbol{\Sigma}_i \left( \boldsymbol{\xi} \right) \right)^{-1} \left( \mathbf{y}_i -  \mathbf{X}_i \boldsymbol{\hat \beta} \right) \right]
+\end{split}
+\tag{4.15}
+\end{equation}\]</span>
+As in case of multivariate meta-analysis, likelihood estimators requires iterative algorithms to optimize the functions <a href="methods.html#eq:logLik-os">(4.14)</a> and <a href="methods.html#eq:logLikR-os">(4.15)</a>.
+In particular, the Nelder-Mead method can be employed to find the maximum for the parameters in the multidimensional domain. For ease of computation, both likelihoods are expressed as function of only the <span class="math inline">\(\boldsymbol{\xi}\)</span> parameters, which corresponds to the elements of the lower triangular Cholesky decomposition of <span class="math inline">\(\boldsymbol{\Psi}\)</span>. The algorithms start with an initial guess for <span class="math inline">\(\boldsymbol{\Psi}\)</span>, obtain an estimate for <span class="math inline">\(\boldsymbol{\beta}\)</span> using GLS estimators and maximize the objective function in terms of <span class="math inline">\(\boldsymbol{\xi}\)</span>. The steps are iterated until convergence is achieved.</p>
+<p>Test of hypothesis and confidence intervals are based on the established theory for mixed models. Inference on the fixed-effects coefficients is conducted in a similar way as presented in Section <a href="background.html#sec:2nd-stage">2.3.2</a>, using the asymptotic normal distribution for the estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span>. Tests for the variance components, instead, generally require a mixture of <span class="math inline">\(\chi^2\)</span> because the coefficients to be tested can only be positive. When <span class="math inline">\(p \ge 2\)</span>, however, the distribution of the test statistic is difficult to implement, so that alternative measures can be instead applied.</p>
+<p>Following the idea behind the definition of the ICC, the marginal variance in <a href="methods.html#eq:marginal-os">(4.12)</a> can also be decomposed in the within-study and between-study components. The dose–response model <a href="methods.html#eq:onestage">(4.11)</a> is a mixed model with random-effects for the slope terms and with no intercept. Thus, the between-study variance is a quadratic function of the assigned dose values. For this setting <span class="citation">Goldstein, Browne, &amp; Rasbash (<a href="#ref-goldstein2002partitioning">2002</a>)</span> defined the Variance Partition Coefficient (VPC) as the ratio of the between-studies component by the total residual variability
+<span class="math display" id="eq:vpc">\[\begin{equation}
+\textrm{VPC}_{ij} = \frac{\mathbf{z}_{ij} \boldsymbol{\Psi} \mathbf{z}_{ij}^\top}{\mathbf{z}_{ij} \boldsymbol{\Psi} \mathbf{z}_{ij}^\top  + s_{ij}^2}
+\tag{4.16}
+\end{equation}\]</span>
+The VPC is indexed by both <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> because it depends both on the observed dose value <span class="math inline">\(z_{ij}\)</span> and the variance for the log relative risk <span class="math inline">\(s_{ij}^2\)</span>. Values for VPC can be expressed as percentage to quantify the proportion of residual variance attributable to heterogeneity. Because the VPC will typically vary for different doses, overlaying a LOWESS smother in a scatter plot VPC versus dose levels may help to examine the impact of heterogeneity over the exposure range.</p>
+<p>Information criteria based on the log-likelihood <a href="methods.html#eq:logLik-os">(4.14)</a> can be used to compared the fit of alternative models. As opposed to the corresponding measure from a two-stage analysis, the AIC from a one-stage model is not limited to the comparison of meta-regression models assuming the same functional relationship. Instead, the fit of different dose–response analyses can be properly compared using these fit indices since the log-likelihood is conditional on the modelled log relative risks rather than the study-specific regression coefficients.</p>
+</div>
+<div id="prediction" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Prediction<a href="methods.html#prediction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Predictions for the combined, or marginal, curve are obtained as in Equation <a href="background.html#eq:pred">(2.24)</a>, where now the <span class="math inline">\(\boldsymbol{\hat \beta}\)</span> coefficients were estimated using the log relative risks as outcome variables rather than the study-specific <span class="math inline">\(\boldsymbol{\hat \beta}_i\)</span>.</p>
+<p>Predictions are also available for study-specific curves. Using the normality distribution for the random-effects, <span class="citation">Henderson, Kempthorne, Searle, &amp; Von Krosigk (<a href="#ref-henderson1959estimation">1959</a>)</span> computed the asymptotic BLUP of the random-effects <span class="math inline">\(\boldsymbol{b}\)</span> as
+<span class="math display" id="eq:blup-os">\[\begin{equation}
+\hat {\mathbf{b}}_i = \hat{\boldsymbol{\Psi}} \mathbf{Z}_i^\top \hat{\boldsymbol{\Sigma}}_i^{-1}\left( \mathbf{y}_i - \mathbf{X}_i\hat{\boldsymbol{\beta}} \right)
+\tag{4.17}
+\end{equation}\]</span></p>
+<p>The conditional dose–response coefficients are defined as <span class="math inline">\(\mathbf{X}_i\hat{\boldsymbol{\beta}} + \hat {\mathbf{b}}_i\)</span>. Of note, individual curves defined by <span class="math inline">\(p\)</span> parameters can be predicted for those studies reporting <span class="math inline">\(J_i &lt; p\)</span> non-referent relative risks. The BLUP employ the information of the entire distribution of the random-effects to make the best possible prediction.</p>
+</div>
+<div id="comparison-with-two-stage-analysis" class="section level3 hasAnchor" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Comparison with two-stage analysis<a href="methods.html#comparison-with-two-stage-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Previous methodological articles have oftentimes implemented new methods using the two-stage approach, mainly because of computation reasons. The alternative one-stage approach has been frequently referred to as equivalent and was not further investigated. The tools to assess the goodness-of-fit in Paper II were established using the one-stage framework. We proved in the supplementary material of the original paper that the two techniques give identical results in a fixed-effects analysis of non-linear curves, not only for the simpler case of a linear trend. In the appendix of Paper V, we extended the equivalence to the setting of non-linear curves for a random-effects model. In order to provide the same point and interval estimates, the study-specific models in the two-stage analysis need to be estimable, i.e. <span class="math inline">\(p \le \min(J_i)\)</span>. In practical examples, small discrepancies in <span class="math inline">\(\boldsymbol{\hat \beta}\)</span> and <span class="math inline">\(\widehat{\textrm{Var}} \left( \boldsymbol{\hat \beta} \right)\)</span> may be related to differences in the optimization methods for the objective functions of the two techniques.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-berlin1993meta" class="csl-entry">
+Berlin, J. A., Longnecker, M. P., &amp; Greenland, S. (1993). Meta-analysis of epidemiologic dose-response data. <em>Epidemiology</em>, <em>4</em>(3), 218–228.
+</div>
+<div id="ref-biggerstaff1997incorporating" class="csl-entry">
+Biggerstaff, B., &amp; Tweedie, R. (1997). Incorporating variability in estimates of heterogeneity in the random effects model in meta-analysis. <em>Statistics in Medicine</em>, <em>16</em>(7), 753–768.
+</div>
+<div id="ref-crippa2018one" class="csl-entry">
+Crippa, A., Discacciati, A., Bottai, M., Spiegelman, D., &amp; Orsini, N. (2018). One-stage dose–response meta-analysis for aggregated data. <em>Manuscript</em>.
+</div>
+<div id="ref-crippa2014coffee" class="csl-entry">
+Crippa, A., Discacciati, A., Larsson, S. C., Wolk, A., &amp; Orsini, N. (2014). Coffee consumption and mortality from all causes, cardiovascular disease, and cancer: A dose-response meta-analysis. <em>American Journal of Epidemiology</em>, <em>180</em>(8), 763–775.
+</div>
+<div id="ref-crippa2016red" class="csl-entry">
+Crippa, A., Larsson, S. C., Discacciati, A., Wolk, A., &amp; Orsini, N. (2016). Red and processed meat consumption and risk of bladder cancer: A dose–response meta-analysis of epidemiological studies. <em>European Journal of Nutrition</em>, 1–13.
+</div>
+<div id="ref-crippa2016dose" class="csl-entry">
+Crippa, A., &amp; Orsini, N. (2016). Dose-response meta-analysis of differences in means. <em>BMC Medical Research Methodology</em>, <em>16</em>(1), 91.
+</div>
+<div id="ref-di2014fish" class="csl-entry">
+Di Giuseppe, D., Crippa, A., Orsini, N., &amp; Wolk, A. (2014). Fish consumption and risk of rheumatoid arthritis: A dose-response meta-analysis. <em>Arthritis Research &amp; Therapy</em>, <em>16</em>(5), 446.
+</div>
+<div id="ref-draper2014applied" class="csl-entry">
+Draper, N. R., &amp; Smith, H. (2014). <em>Applied regression analysis</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-gasparrini2012multivariate" class="csl-entry">
+Gasparrini, A., Armstrong, B., &amp; Kenward, M. (2012). Multivariate meta-analysis for non-linear and other multi-parameter associations. <em>Statistics in Medicine</em>, <em>31</em>(29), 3821–3839.
+</div>
+<div id="ref-goldstein2002partitioning" class="csl-entry">
+Goldstein, H., Browne, W., &amp; Rasbash, J. (2002). Partitioning variation in multilevel models. <em>Understanding Statistics: Statistical Issues in Psychology, Education, and the Social Sciences</em>, <em>1</em>(4), 223–231.
+</div>
+<div id="ref-greenland1992methods" class="csl-entry">
+Greenland, S., &amp; Longnecker, M. P. (1992). Methods for trend estimation from summarized dose-response data, with applications to meta-analysis. <em>American Journal of Epidemiology</em>, <em>135</em>(11), 1301–1309.
+</div>
+<div id="ref-hamling2008facilitating" class="csl-entry">
+Hamling, J., Lee, P., Weitkunat, R., &amp; Ambühl, M. (2008). Facilitating meta-analyses by deriving relative effect and precision estimates for alternative comparisons from a set of estimates presented by exposure level or disease category. <em>Statistics in Medicine</em>, <em>27</em>(7), 954–970.
+</div>
+<div id="ref-harrell2013regression" class="csl-entry">
+Harrell, F. (2013). Regression modeling strategies. <em>As Implemented in R Package <span>“Rms”</span> Version</em>, <em>3</em>(3).
+</div>
+<div id="ref-henderson1959estimation" class="csl-entry">
+Henderson, C. R., Kempthorne, O., Searle, S. R., &amp; Von Krosigk, C. (1959). The estimation of environmental and genetic trends from records subject to culling. <em>Biometrics</em>, <em>15</em>(2), 192–218.
+</div>
+<div id="ref-higgins2002quantifying" class="csl-entry">
+Higgins, J., &amp; Thompson, S. G. (2002). Quantifying heterogeneity in a meta-analysis. <em>Statistics in Medicine</em>, <em>21</em>(11), 1539–1558.
+</div>
+<div id="ref-jackson2010extending" class="csl-entry">
+Jackson, D., White, I. R., &amp; Thompson, S. G. (2010). Extending DerSimonian and laird’s methodology to perform multivariate random effects meta-analyses. <em>Statistics in Medicine</em>, <em>29</em>(12), 1282–1297.
+</div>
+<div id="ref-kvaalseth1985cautionary" class="csl-entry">
+Kvålseth, T. O. (1985). Cautionary note about r 2. <em>The American Statistician</em>, <em>39</em>(4), 279–285.
+</div>
+<div id="ref-larsson2015milk" class="csl-entry">
+Larsson, S. C., Crippa, A., Orsini, N., Wolk, A., &amp; Michaëlsson, K. (2015). Milk consumption and mortality from all causes, cardiovascular disease, and cancer: A systematic review and meta-analysis. <em>Nutrients</em>, <em>7</em>(9), 7749–7763.
+</div>
+<div id="ref-larsson2011coffee" class="csl-entry">
+Larsson, S. C., &amp; Orsini, N. (2011). Coffee consumption and risk of stroke: A dose-response meta-analysis of prospective studies. <em>American Journal of Epidemiology</em>, <em>174</em>(9), 993–1001.
+</div>
+<div id="ref-larsson2006milk" class="csl-entry">
+Larsson, S. C., Orsini, N., &amp; Wolk, A. (2006). Milk, milk products and lactose intake and ovarian cancer risk: A meta-analysis of epidemiological studies. <em>International Journal of Cancer</em>, <em>118</em>(2), 431–441.
+</div>
+<div id="ref-liu2009two" class="csl-entry">
+Liu, Q., Cook, N. R., Bergström, A., &amp; Hsieh, C.-C. (2009). A two-stage hierarchical regression model for meta-analysis of epidemiologic nonlinear dose–response data. <em>Computational Statistics &amp; Data Analysis</em>, <em>53</em>(12), 4157–4167.
+</div>
+<div id="ref-nilsson2012traditional" class="csl-entry">
+Nilsson, L. M., Winkvist, A., Brustad, M., Jansson, J.-H., Johansson, I., Lenner, P., … Van Guelpen, B. (2012). A traditional sami diet score as a determinant of mortality in a general northern swedish population. <em>International Journal of Circumpolar Health</em>, <em>71</em>(1), 18537.
+</div>
+<div id="ref-orsini2006generalized" class="csl-entry">
+Orsini, N., Bellocco, R., Greenland, S., et al. (2006). Generalized least squares for trend estimation of summarized dose-response data. <em>Stata Journal</em>, <em>6</em>(1), 40.
+</div>
+<div id="ref-orsini2011meta" class="csl-entry">
+Orsini, N., Li, R., Wolk, A., Khudyakov, P., &amp; Spiegelman, D. (2011). Meta-analysis for linear and nonlinear dose-response relations: Examples, an evaluation of approximations, and software. <em>American Journal of Epidemiology</em>, <em>175</em>(1), 66–73.
+</div>
+<div id="ref-rota2010random" class="csl-entry">
+Rota, M., Bellocco, R., Scotti, L., Tramacere, I., Jenab, M., Corrao, G., … Bagnardi, V. (2010). Random-effects meta-regression models for studying nonlinear dose–response relationship, with an application to alcohol and esophageal squamous cell carcinoma. <em>Statistics in Medicine</em>, <em>29</em>(26), 2679–2687.
+</div>
+<div id="ref-sauerbrei2011new" class="csl-entry">
+Sauerbrei, W., &amp; Royston, P. (2011). A new strategy for meta-analysis of continuous covariates in observational studies. <em>Statistics in Medicine</em>, <em>30</em>(28), 3341–3360.
+</div>
+<div id="ref-takkouche1999evaluation" class="csl-entry">
+Takkouche, B., Cadarso-Suárez, C., &amp; Spiegelman, D. (1999). Evaluation of old and new tests of heterogeneity in epidemiologic meta-analysis. <em>American Journal of Epidemiology</em>, <em>150</em>(2), 206–215.
+</div>
+<div id="ref-theil1958economic" class="csl-entry">
+Theil, H. (1958). Economic forecasts and policy.
+</div>
+<div id="ref-turner2010categorisation" class="csl-entry">
+Turner, E. L., Dobson, J. E., &amp; Pocock, S. J. (2010). Categorisation of continuous risk factors in epidemiological publications: A survey of current practice. <em>Epidemiologic Perspectives &amp; Innovations</em>, <em>7</em>(1), 9.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aim.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": [
+    ["thesis.pdf", "PDF"],
+    ["thesis.epub", "EPUB"],
+    ["thesis.docx", "Word"]
+  ],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Discussion | Novel methods for dose–response meta-analysis</title>
+  <meta name="description" content="Chapter 6 Discussion | Novel methods for dose–response meta-analysis" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Discussion | Novel methods for dose–response meta-analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Discussion | Novel methods for dose–response meta-analysis" />
+  
+  
+  
+
+<meta name="author" content="Alessio Crippa" />
+
+
+<meta name="date" content="2018-04-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="5-results.html"/>
+<link rel="next" href="7-conclusions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#list-of-publications"><i class="fa fa-check"></i>List of publications</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#related-publications"><i class="fa fa-check"></i>Related publications</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#list-of-abbreviations"><i class="fa fa-check"></i>List of abbreviations</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-intro.html"><a href="1-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="2-background.html"><a href="2-background.html"><i class="fa fa-check"></i><b>2</b> Background</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-background.html"><a href="2-background.html#meta-analysis"><i class="fa fa-check"></i><b>2.1</b> Meta-analysis</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="2-background.html"><a href="2-background.html#sec:rma"><i class="fa fa-check"></i><b>2.1.1</b> Random-effects meta-analysis</a></li>
+<li class="chapter" data-level="2.1.2" data-path="2-background.html"><a href="2-background.html#sec:het_rma"><i class="fa fa-check"></i><b>2.1.2</b> Test and estimates of heterogeneity</a></li>
+<li class="chapter" data-level="2.1.3" data-path="2-background.html"><a href="2-background.html#sec:measures-het"><i class="fa fa-check"></i><b>2.1.3</b> Measures of heterogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="2-background.html"><a href="2-background.html#categorical-models-for-doseresponse-analysis"><i class="fa fa-check"></i><b>2.2</b> Categorical models for dose–response analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="2-background.html"><a href="2-background.html#aggregated-doseresponse-data"><i class="fa fa-check"></i><b>2.2.1</b> Aggregated dose–response data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="2-background.html"><a href="2-background.html#high-vs.-low-and-categorical-meta-analysis"><i class="fa fa-check"></i><b>2.2.2</b> High vs. low and categorical meta-analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="2-background.html"><a href="2-background.html#doseresponse-meta-analysis"><i class="fa fa-check"></i><b>2.3</b> Dose–response meta-analysis</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="2-background.html"><a href="2-background.html#sec:1st-stage"><i class="fa fa-check"></i><b>2.3.1</b> First stage: study-specific trends</a></li>
+<li class="chapter" data-level="2.3.2" data-path="2-background.html"><a href="2-background.html#sec:2nd-stage"><i class="fa fa-check"></i><b>2.3.2</b> Second stage: multivariate meta-analysis</a></li>
+<li class="chapter" data-level="2.3.3" data-path="2-background.html"><a href="2-background.html#history-of-previous-methodological-research"><i class="fa fa-check"></i><b>2.3.3</b> History of previous methodological research</a></li>
+<li class="chapter" data-level="2.3.4" data-path="2-background.html"><a href="2-background.html#description-of-current-practice"><i class="fa fa-check"></i><b>2.3.4</b> Description of current practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="2-background.html"><a href="2-background.html#software"><i class="fa fa-check"></i><b>2.4</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-aim.html"><a href="3-aim.html"><i class="fa fa-check"></i><b>3</b> Aims of the thesis</a></li>
+<li class="chapter" data-level="4" data-path="4-methods.html"><a href="4-methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-methods.html"><a href="4-methods.html#sec:dosresmeta"><i class="fa fa-check"></i><b>4.1</b> The <strong>dosresmeta</strong> R package</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="4-methods.html"><a href="4-methods.html#architecture-and-design-of-the-package"><i class="fa fa-check"></i><b>4.1.1</b> Architecture and design of the package</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-methods.html"><a href="4-methods.html#description-of-the-package"><i class="fa fa-check"></i><b>4.1.2</b> Description of the package</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-methods.html"><a href="4-methods.html#datasets"><i class="fa fa-check"></i><b>4.1.3</b> Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4-methods.html"><a href="4-methods.html#sec:gof"><i class="fa fa-check"></i><b>4.2</b> Goodness-of-fit</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="4-methods.html"><a href="4-methods.html#deviance"><i class="fa fa-check"></i><b>4.2.1</b> Deviance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="4-methods.html"><a href="4-methods.html#coefficient-of-determination"><i class="fa fa-check"></i><b>4.2.2</b> Coefficient of determination</a></li>
+<li class="chapter" data-level="4.2.3" data-path="4-methods.html"><a href="4-methods.html#visual-tools"><i class="fa fa-check"></i><b>4.2.3</b> Visual tools</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="4-methods.html"><a href="4-methods.html#sec:Rb"><i class="fa fa-check"></i><b>4.3</b> A new measure of heterogeneity</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4-methods.html"><a href="4-methods.html#definition-and-properties"><i class="fa fa-check"></i><b>4.3.1</b> Definition and properties</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4-methods.html"><a href="4-methods.html#sec:pwa"><i class="fa fa-check"></i><b>4.4</b> A point-wise approach</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="4-methods.html"><a href="4-methods.html#estimation-and-prediction-of-study-specific-curves"><i class="fa fa-check"></i><b>4.4.1</b> Estimation and prediction of study-specific curves</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4-methods.html"><a href="4-methods.html#averaging-of-doseresponse-predictions"><i class="fa fa-check"></i><b>4.4.2</b> Averaging of dose–response predictions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="4-methods.html"><a href="4-methods.html#sec:one-stage"><i class="fa fa-check"></i><b>4.5</b> A one-stage model</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="4-methods.html"><a href="4-methods.html#model-definition"><i class="fa fa-check"></i><b>4.5.1</b> Model definition</a></li>
+<li class="chapter" data-level="4.5.2" data-path="4-methods.html"><a href="4-methods.html#estimation-hypothesis-testing-and-model-comparison"><i class="fa fa-check"></i><b>4.5.2</b> Estimation, hypothesis testing, and model comparison</a></li>
+<li class="chapter" data-level="4.5.3" data-path="4-methods.html"><a href="4-methods.html#prediction"><i class="fa fa-check"></i><b>4.5.3</b> Prediction</a></li>
+<li class="chapter" data-level="4.5.4" data-path="4-methods.html"><a href="4-methods.html#comparison-with-two-stage-analysis"><i class="fa fa-check"></i><b>4.5.4</b> Comparison with two-stage analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-results.html"><a href="5-results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-results.html"><a href="5-results.html#sec:res-paperI"><i class="fa fa-check"></i><b>5.1</b> Paper I</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="5-results.html"><a href="5-results.html#single-study-analysis"><i class="fa fa-check"></i><b>5.1.1</b> Single study analysis</a></li>
+<li class="chapter" data-level="5.1.2" data-path="5-results.html"><a href="5-results.html#multiple-studies"><i class="fa fa-check"></i><b>5.1.2</b> Multiple studies</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="5-results.html"><a href="5-results.html#sec:res-paperII"><i class="fa fa-check"></i><b>5.2</b> Paper II</a></li>
+<li class="chapter" data-level="5.3" data-path="5-results.html"><a href="5-results.html#sec:res-paperIII"><i class="fa fa-check"></i><b>5.3</b> Paper III</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="5-results.html"><a href="5-results.html#processed-meat-and-bladder-cancer"><i class="fa fa-check"></i><b>5.3.1</b> Processed meat and bladder cancer</a></li>
+<li class="chapter" data-level="5.3.2" data-path="5-results.html"><a href="5-results.html#red-meat-and-bladder-cancer"><i class="fa fa-check"></i><b>5.3.2</b> Red meat and bladder cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="5-results.html"><a href="5-results.html#sec:res-paperIV"><i class="fa fa-check"></i><b>5.4</b> Paper IV</a></li>
+<li class="chapter" data-level="5.5" data-path="5-results.html"><a href="5-results.html#sec:res-paperV"><i class="fa fa-check"></i><b>5.5</b> Paper V</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-discussion.html"><a href="6-discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-discussion.html"><a href="6-discussion.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness-of-fit</a></li>
+<li class="chapter" data-level="6.2" data-path="6-discussion.html"><a href="6-discussion.html#a-new-measure-of-heterogeneity"><i class="fa fa-check"></i><b>6.2</b> A new measure of heterogeneity</a></li>
+<li class="chapter" data-level="6.3" data-path="6-discussion.html"><a href="6-discussion.html#a-point-wise-approach"><i class="fa fa-check"></i><b>6.3</b> A point-wise approach</a></li>
+<li class="chapter" data-level="6.4" data-path="6-discussion.html"><a href="6-discussion.html#a-one-stage-model"><i class="fa fa-check"></i><b>6.4</b> A one-stage model</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-conclusions.html"><a href="7-conclusions.html"><i class="fa fa-check"></i><b>7</b> Conclusions</a></li>
+<li class="chapter" data-level="8" data-path="8-future.html"><a href="8-future.html"><i class="fa fa-check"></i><b>8</b> Future research</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-sec:rcs-app.html"><a href="A-sec:rcs-app.html"><i class="fa fa-check"></i><b>A</b> Appendix A: Restricted cubic splines</a></li>
+<li class="chapter" data-level="B" data-path="B-appendix-b-supplementary-figures.html"><a href="B-appendix-b-supplementary-figures.html"><i class="fa fa-check"></i><b>B</b> Appendix B: Supplementary figures</a></li>
+<li class="chapter" data-level="C" data-path="C-appendix-c-supplementary-tables.html"><a href="C-appendix-c-supplementary-tables.html"><i class="fa fa-check"></i><b>C</b> Appendix C: Supplementary tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Novel methods for dose–response meta-analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="discussion" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Discussion<a href="6-discussion.html#discussion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>We have proposed and developed new strategies and ad-hoc measures for dose–response meta-analysis, including tools for evaluating the goodness-of-fit, a new measure for quantifying the impact of heterogeneity, a strategy to deal with differences in the exposure range across studies, and a one-stage approach to estimate complex models without excluding relevant studies.
+The developed methodologies have been implemented in user-friendly R packages freely available on CRAN. Several codes for reproducing the results of this thesis and of the corresponding papers can be found on my website <a href="https://alecri.github.io/software" class="uri">https://alecri.github.io/software</a> and on GitHub at <a href="https://github.com/alecri" class="uri">https://github.com/alecri</a>.</p>
+<div id="goodness-of-fit" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Goodness-of-fit<a href="6-discussion.html#goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An evaluation of the goodness-of-fit should be a natural step in a dose–response meta-analysis. In Paper II we discussed the relevant issue of how to evaluate the goodness-of-fit in a dose–response meta-analysis. Flexible parametric curves are estimated in order to summarize and represent the aggregated data in a synthetic format. It is important to check if the fitted meta-analytical model actually provides an adequate description of the data at hand.</p>
+<p>The evaluation of the goodness-of-fit is usually carried out in practice by measuring the degree of agreement between the fitted and observed data. We have presented and discussed three tools (deviance, coefficients of determination, and decorrelated residuals versus exposure plot) specifically designed for assessing the goodness-of-fit in meta-analysis of aggregated dose–response data. In particular, the deviance can be employed for testing if the chosen meta-analytic model is properly specified, while the <span class="math inline">\(R^2\)</span> can be useful for quantifying from a descriptive point of view the proportion of variability accounted by the dose–response model. The fit of the dose–response analysis can be visually checked by inspecting the scatter plot of the decorrelated residuals versus the quantitative exposure.</p>
+<p>The practical examples in Paper II and Section <a href="5-results.html#sec:res-paperII">5.2</a> illustrated the use of the proposed tools in evaluating the fit of the candidate dose–response models. In particular, we have shown how they can be useful for identifying specific dose–response patterns, investigating possible sources of heterogeneity, and generally evaluating if the combined dose–response association can be an adequate summary of the observed data. Implementation of the proposed tools in applied works can strengthen the results or, on the contrary, raise doubts about the ability of the selected model in summarizing the available evidence.</p>
+<p>As in the general case for the use of summary measures, one should be aware of the possible limitations of the developed tools.
+We have already seen that while a small <span class="math inline">\(p\)</span> value for the deviance test for model specification is an indication that the posited model failed in accounting for the observed variation in the log relative risks, a large <span class="math inline">\(p\)</span> value can not be interpreted as evidence that the model adequately explains the observed variability. In addition, a test based approach is generally unsatisfactory because it does not provide information about the actual fit of the analysis and suffers from low power due to the typically small number of data points in meta-analyses. Lastly, the <span class="math inline">\(p\)</span> values for the global test of goodness-of-fit are not valid when the meta-analytical dose–response models are estimated driven by the observed data.</p>
+<p>Possible explanations for a low value of the <span class="math inline">\(R^2\)</span> may be multiple. In fact, an <span class="math inline">\(R^2\)</span> close to zero may indicate that the selected model poorly fits the data, but also that there is no association between the quantitative exposure and the relative risk for the health outcome, or again that the model is correctly specified but the residual variability is still close to the overall variability. Finally, the visual inspection of the goodness-of-fit can reveal dose–response patterns in the modeled data but its judgment can be quite subjective. In case of sparse data, almost any patterns can be detected in the decorrelated residuals-versus-exposure plot.</p>
+<p>More generally, the tools have been presented in a fixed-effect framework. The decorrelated residuals-versus-exposure plot can be directly extended to the case of a random-effects analysis by including the covariance matrix of the random-effects in the Cholesky decomposition. The other two measures do not have an explicit extension. Their usage as diagnostic tools, however, should be independent from the inclusion of the random-effects in the final model.</p>
+</div>
+<div id="a-new-measure-of-heterogeneity" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> A new measure of heterogeneity<a href="6-discussion.html#a-new-measure-of-heterogeneity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Another relevant aspect in a quantitative review, which is also related the assessment of goodness-of-fit, is the evaluation of the impact of heterogeneity. Indeed, a high variability in the reported effect sizes may undermine the appropriateness of presenting the combined effect as a summary measure. The common measures of heterogeneity have been developed under the unrealistic assumption of constant error variances. In Paper III we have proposed a new measure of heterogeneity, <span class="math inline">\(\hat R_b\)</span>, that overcomes the limitation of the previous measures.</p>
+<p>The <span class="math inline">\(\hat R_b\)</span> quantifies the impact of heterogeneity as the proportion of the variance of the combined effect due to the between-study variability. We have shown how <span class="math inline">\(\hat R_b\)</span> satisfies the properties required for a measure of heterogeneity without making any assumptions about the distribution of the within-study error terms. It can be expressed as the average of the study-specific intraclass correlation terms, i.e. the ratios of the <span class="math inline">\(\tau^2\)</span> to the overall study-specific variance <span class="math inline">\(\tau^2 + v_i\)</span>. Like <span class="math inline">\(I^2\)</span> and <span class="math inline">\(\hat R_I\)</span>, the proposed measure tends to its upper limit 1 in case of meta-analysis of very precise estimates (small <span class="math inline">\(v_i\)</span>). The between-study coefficient of variation can give additional information about the magnitude of heterogeneity compensating the shortcoming of the available measures.
+The proposed measure of heterogeneity requires an estimate of <span class="math inline">\(\tau^2\)</span>, the between-study variability. Thus, confidence intervals should accompany the point estimates of <span class="math inline">\(\hat R_b\)</span> to reflect the uncertainty in the sample. We have proposed Wald type confidence intervals using the delta methods based on the relation between <span class="math inline">\(\hat R_b\)</span> and <span class="math inline">\(Q\)</span>. The performances of the confidence intervals were tested throughout an extensive simulation study presented in <span class="citation">Crippa, Khudyakov, Wang, Orsini, &amp; Spiegelman (<a href="#ref-crippa2016new">2016</a>)</span>.</p>
+<p>We have shown how to present and interpret the new measure of heterogeneity by reanalyzing both univariate meta-analyses (in the illustrative examples of <span class="citation">Crippa, Khudyakov, et al. (<a href="#ref-crippa2016new">2016</a>)</span>) and, more specifically, a dose–response meta-analysis (in Section <a href="5-results.html#sec:res-paperIII">5.3</a>). As expected, the <span class="math inline">\(\hat R_b\)</span> provided similar results as compared to both <span class="math inline">\(I^2\)</span> and <span class="math inline">\(\hat R_I\)</span> in case of effect sizes with homogeneous distribution for the within-error terms. On the contrary, differences were more evident as the variability of the <span class="math inline">\(v_i\)</span> increased, with values of <span class="math inline">\(\hat R_b\)</span> generally lower than the corresponding <span class="math inline">\(I^2\)</span> and <span class="math inline">\(\hat R_I\)</span>.</p>
+</div>
+<div id="a-point-wise-approach" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> A point-wise approach<a href="6-discussion.html#a-point-wise-approach" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Paper IV we have extended a point-wise approach originally presented for meta-analysis of individual patient data to the case of meta-analysis of aggregated dose–response data. The proposed strategy consists of combining the predicted log relative risks for a fine grid of exposure values arising from different study-specific dose–response analyses instead of combining the regression coefficients for a common dose–response model.</p>
+<p>A point-wise approach has the potential advantage of improving the individual dose–response analyses since the study-specific models can be defined separately across the studies. Although the aim of a dose–response meta-analysis should be to estimate a common curve that uniformly fits the study-specific results, estimation of a single functional form may lower the fit of some individual analyses. We have illustrated in Section <a href="4-methods.html#sec:pwa">4.4</a> and <a href="5-results.html#sec:res-paperIV">5.4</a> the case of second degree fractional polynomials. In a two-stage approach, a single couple of power terms needs to be defined for all the studies so that the pooled dose–response curve can be derived by pooling the study-specific regression coefficients. In a point-wise approach, each study can choose a possibly different combination of power terms to better fit the observed data. In such a way, the predicted log relative risks will be closer to the observed ones. The combined curve can be then derived by pooling the individual predicted log relative risks pointwisely.</p>
+<p>Another important advantage relates to the meta-analysis of heterogeneous exposure distributions where the quantitative exposure may differ not only in the definition and measurement but also in the range. The solution in a two-stage analysis could be to limit the prediction of the pooled curve to a subset of the observed exposure values. Depending of the extent of the diversity of the exposure ranges this might not be sufficient. We have illustrated this feature reanalyzing aggregated data on the association between milk consumption and all-cause mortality in the results of <span class="citation">Crippa, Thomas, &amp; Orsini (<a href="#ref-crippa2018pointwise">2018</a>)</span> and between red meat consumption and bladder cancer in Section <a href="5-results.html#sec:res-paperIV">5.4</a>.
+In the point-wise strategy, the predicted log relative risk can be limited to the observed exposure range. The combined curve is thus obtained by combining pointwisely a potential different number of log relative risks. Neglecting this type of heterogeneity may have important consequences both in terms of point and interval estimates for the combined dose–response association. We have seen in Section <a href="5-results.html#sec:res-paperIV">5.4</a> how the results based on a two-stage analysis may provide overconfident results for moderate to high values of red meat consumption, whereas a point-wise strategy limited the number of studies participating in the corresponding prediction and thus produced wider confident intervals, reflecting the uncertainty associated with the lower number of results. Finally, additional results from the univariate meta-analytic models can also be presented pointwisely, providing a richer description of the quantities of interest over the exposure range.</p>
+<p>A possible limitation of the proposed approach is that the combined curve is obtained by means of separate univariate meta-analyses which are based on a set of common study-specifics analyses. As a consequence, the standard errors and confidence intervals may no longer be valid. A potential remedy would be to incorporate the covariance matrix for the study-specific predictions in the multivariate meta-analytic model. However, the number and the nature of the multivariate predictions are typically too high for the estimation algorithms to converge.</p>
+</div>
+<div id="a-one-stage-model" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> A one-stage model<a href="6-discussion.html#a-one-stage-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Paper V we have formalized and presented a one-stage model for meta-analysis of heterogeneous non-linear curves. The two steps of a two-stage approach, dose–response and pooling, can be written as a single procedure in terms of a linear mixed-effects model. The mixed-effects framework is particularly suitable for inferential procedures, marginal and conditional predictions, quantification of heterogeneity, goodness-of-fit and model comparison. The same questions frequently answered in a two-stage approach can be similarly addressed using a one-stage methodology.</p>
+<p>The technique was initially presented in a fixed-effect analysis as a more flexible alternative of the two-stage methodology. Extensions to random-effects meta-analysis of non-linear curves have been typically framed into a two-stage framework because of the developments related to multivariate meta-analysis and for simplicity in the implementation using common statistical software. A one-stage model has oftentimes been regarded as equivalent. Even if we proved that a one-stage and two-stage approach give the same point estimates and inference, the one-stage methodology is more flexible and allows one to answer more elaborate research questions. Flexible curves can also be estimated based on the results from studies reporting a limited number of relative risks. In a two-stage meta-analysis, on the other hand, a typical requirement is that each study provides enough data for the individual dose–response analyses. For example, using either second order fractional polynomials or restricted cubic splines with 3 knots, <span class="math inline">\(p = 2\)</span> transformations are required for modeling non-linear associations. As a consequence, only studies providing at least 2 non-referent relative risks can be included in the non-linear analysis. The case where studies reported the results after dichotomizing the quantitative exposure are not rare. The data for these studies will be excluded in a two-stage meta-analysis. One important objective of a quantitative review, however, is to consider and analyze the whole body of evidence for a research question of interest. Systematic exclusion of studies because of insufficient number of data points will necessarily discard useful information and thus provide only a partial summary. Furthermore, the assessment and investigation of between-studies variability will be also distorted, so that residual heterogeneity might be undetected.</p>
+<p>Another advantage of a one-stage model is that many methodological aspects are greatly facilitated by using a single linear mixed-effects model. The tools presented in Paper II, for instance, were developed using the equivalence between the one- and two-stage approach in a fixed-effects analysis. The comparison of the fit in different dose–response analyses is also greatly facilitated by using information criteria such as the AIC, which are based on a common comparable likelihood.</p>
+<p>Multiple routines implement linear mixed-effects models in different statistical packages. However, several aspects are specific to dose–response meta-analysis and it may be cumbersome to specify them using general commands for mixed-effects model. Therefore, we have implemented the one-stage methodology in the updated version of the <strong>dosresmeta</strong> package. Several example data sets and codes are available in order to facilitate applications of the proposed methodology.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-crippa2016new" class="csl-entry">
+Crippa, A., Khudyakov, P., Wang, M., Orsini, N., &amp; Spiegelman, D. (2016). A new measure of between-studies heterogeneity in meta-analysis. <em>Statistics in Medicine</em>, <em>35</em>(21), 3661–3675.
+</div>
+<div id="ref-crippa2018pointwise" class="csl-entry">
+Crippa, A., Thomas, I., &amp; Orsini, N. (2018). A pointwise approach to dose-response meta-analysis of aggregated data. <em>Submitted</em>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="5-results.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="7-conclusions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": [
+    ["thesis.pdf", "PDF"],
+    ["thesis.epub", "EPUB"],
+    ["thesis.docx", "Word"]
+  ],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

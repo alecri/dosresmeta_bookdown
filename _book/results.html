@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Results | Novel methods for dose–response meta-analysis</title>
+  <meta name="description" content="Chapter 5 Results | Novel methods for dose–response meta-analysis" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Results | Novel methods for dose–response meta-analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Results | Novel methods for dose–response meta-analysis" />
+  
+  
+  
+
+<meta name="author" content="Alessio Crippa" />
+
+
+<meta name="date" content="2018-04-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methods.html"/>
+<link rel="next" href="discussion.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#list-of-publications"><i class="fa fa-check"></i>List of publications</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#related-publications"><i class="fa fa-check"></i>Related publications</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#list-of-abbreviations"><i class="fa fa-check"></i>List of abbreviations</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="background.html"><a href="background.html#meta-analysis"><i class="fa fa-check"></i><b>2.1</b> Meta-analysis</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="background.html"><a href="background.html#sec:rma"><i class="fa fa-check"></i><b>2.1.1</b> Random-effects meta-analysis</a></li>
+<li class="chapter" data-level="2.1.2" data-path="background.html"><a href="background.html#sec:het_rma"><i class="fa fa-check"></i><b>2.1.2</b> Test and estimates of heterogeneity</a></li>
+<li class="chapter" data-level="2.1.3" data-path="background.html"><a href="background.html#sec:measures-het"><i class="fa fa-check"></i><b>2.1.3</b> Measures of heterogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="background.html"><a href="background.html#categorical-models-for-doseresponse-analysis"><i class="fa fa-check"></i><b>2.2</b> Categorical models for dose–response analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="background.html"><a href="background.html#aggregated-doseresponse-data"><i class="fa fa-check"></i><b>2.2.1</b> Aggregated dose–response data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="background.html"><a href="background.html#high-vs.-low-and-categorical-meta-analysis"><i class="fa fa-check"></i><b>2.2.2</b> High vs. low and categorical meta-analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="background.html"><a href="background.html#doseresponse-meta-analysis"><i class="fa fa-check"></i><b>2.3</b> Dose–response meta-analysis</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="background.html"><a href="background.html#sec:1st-stage"><i class="fa fa-check"></i><b>2.3.1</b> First stage: study-specific trends</a></li>
+<li class="chapter" data-level="2.3.2" data-path="background.html"><a href="background.html#sec:2nd-stage"><i class="fa fa-check"></i><b>2.3.2</b> Second stage: multivariate meta-analysis</a></li>
+<li class="chapter" data-level="2.3.3" data-path="background.html"><a href="background.html#history-of-previous-methodological-research"><i class="fa fa-check"></i><b>2.3.3</b> History of previous methodological research</a></li>
+<li class="chapter" data-level="2.3.4" data-path="background.html"><a href="background.html#description-of-current-practice"><i class="fa fa-check"></i><b>2.3.4</b> Description of current practice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="background.html"><a href="background.html#software"><i class="fa fa-check"></i><b>2.4</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aim.html"><a href="aim.html"><i class="fa fa-check"></i><b>3</b> Aims of the thesis</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#sec:dosresmeta"><i class="fa fa-check"></i><b>4.1</b> The <strong>dosresmeta</strong> R package</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="methods.html"><a href="methods.html#architecture-and-design-of-the-package"><i class="fa fa-check"></i><b>4.1.1</b> Architecture and design of the package</a></li>
+<li class="chapter" data-level="4.1.2" data-path="methods.html"><a href="methods.html#description-of-the-package"><i class="fa fa-check"></i><b>4.1.2</b> Description of the package</a></li>
+<li class="chapter" data-level="4.1.3" data-path="methods.html"><a href="methods.html#datasets"><i class="fa fa-check"></i><b>4.1.3</b> Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#sec:gof"><i class="fa fa-check"></i><b>4.2</b> Goodness-of-fit</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="methods.html"><a href="methods.html#deviance"><i class="fa fa-check"></i><b>4.2.1</b> Deviance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="methods.html"><a href="methods.html#coefficient-of-determination"><i class="fa fa-check"></i><b>4.2.2</b> Coefficient of determination</a></li>
+<li class="chapter" data-level="4.2.3" data-path="methods.html"><a href="methods.html#visual-tools"><i class="fa fa-check"></i><b>4.2.3</b> Visual tools</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#sec:Rb"><i class="fa fa-check"></i><b>4.3</b> A new measure of heterogeneity</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#definition-and-properties"><i class="fa fa-check"></i><b>4.3.1</b> Definition and properties</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="methods.html"><a href="methods.html#sec:pwa"><i class="fa fa-check"></i><b>4.4</b> A point-wise approach</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="methods.html"><a href="methods.html#estimation-and-prediction-of-study-specific-curves"><i class="fa fa-check"></i><b>4.4.1</b> Estimation and prediction of study-specific curves</a></li>
+<li class="chapter" data-level="4.4.2" data-path="methods.html"><a href="methods.html#averaging-of-doseresponse-predictions"><i class="fa fa-check"></i><b>4.4.2</b> Averaging of dose–response predictions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="methods.html"><a href="methods.html#sec:one-stage"><i class="fa fa-check"></i><b>4.5</b> A one-stage model</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="methods.html"><a href="methods.html#model-definition"><i class="fa fa-check"></i><b>4.5.1</b> Model definition</a></li>
+<li class="chapter" data-level="4.5.2" data-path="methods.html"><a href="methods.html#estimation-hypothesis-testing-and-model-comparison"><i class="fa fa-check"></i><b>4.5.2</b> Estimation, hypothesis testing, and model comparison</a></li>
+<li class="chapter" data-level="4.5.3" data-path="methods.html"><a href="methods.html#prediction"><i class="fa fa-check"></i><b>4.5.3</b> Prediction</a></li>
+<li class="chapter" data-level="4.5.4" data-path="methods.html"><a href="methods.html#comparison-with-two-stage-analysis"><i class="fa fa-check"></i><b>4.5.4</b> Comparison with two-stage analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#sec:res-paperI"><i class="fa fa-check"></i><b>5.1</b> Paper I</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#single-study-analysis"><i class="fa fa-check"></i><b>5.1.1</b> Single study analysis</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#multiple-studies"><i class="fa fa-check"></i><b>5.1.2</b> Multiple studies</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#sec:res-paperII"><i class="fa fa-check"></i><b>5.2</b> Paper II</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#sec:res-paperIII"><i class="fa fa-check"></i><b>5.3</b> Paper III</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#processed-meat-and-bladder-cancer"><i class="fa fa-check"></i><b>5.3.1</b> Processed meat and bladder cancer</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#red-meat-and-bladder-cancer"><i class="fa fa-check"></i><b>5.3.2</b> Red meat and bladder cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#sec:res-paperIV"><i class="fa fa-check"></i><b>5.4</b> Paper IV</a></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#sec:res-paperV"><i class="fa fa-check"></i><b>5.5</b> Paper V</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#goodness-of-fit"><i class="fa fa-check"></i><b>6.1</b> Goodness-of-fit</a></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#a-new-measure-of-heterogeneity"><i class="fa fa-check"></i><b>6.2</b> A new measure of heterogeneity</a></li>
+<li class="chapter" data-level="6.3" data-path="discussion.html"><a href="discussion.html#a-point-wise-approach"><i class="fa fa-check"></i><b>6.3</b> A point-wise approach</a></li>
+<li class="chapter" data-level="6.4" data-path="discussion.html"><a href="discussion.html#a-one-stage-model"><i class="fa fa-check"></i><b>6.4</b> A one-stage model</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>7</b> Conclusions</a></li>
+<li class="chapter" data-level="8" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>8</b> Future research</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="sec:rcs-app.html"><a href="sec:rcs-app.html"><i class="fa fa-check"></i><b>A</b> Appendix A: Restricted cubic splines</a></li>
+<li class="chapter" data-level="B" data-path="appendix-b-supplementary-figures.html"><a href="appendix-b-supplementary-figures.html"><i class="fa fa-check"></i><b>B</b> Appendix B: Supplementary figures</a></li>
+<li class="chapter" data-level="C" data-path="appendix-c-supplementary-tables.html"><a href="appendix-c-supplementary-tables.html"><i class="fa fa-check"></i><b>C</b> Appendix C: Supplementary tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Novel methods for dose–response meta-analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="results" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Results<a href="results.html#results" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>We illustrated the usage of the developed methodologies and measures by reanalyzing data from published dose–response meta-analyses.</p>
+<div id="sec:res-paperI" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Paper I<a href="results.html#sec:res-paperI" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We demonstrated the main aspects of the methodology reanalyzing aggregated dose–response data from 21 prospective studies on the association between coffee consumption (cups/day) and all-cause mortality <span class="citation">(<a href="#ref-crippa2014coffee">Crippa et al., 2014</a>)</span>. The data set <code>coffee_mort</code> is included in the package, with the first six lines printed below.</p>
+<pre class="text"><code>R&gt; library(dosresmeta)
+R&gt; data(&quot;coffee_mort&quot;)
+R&gt; head(coffee_mort)</code></pre>
+<pre><code>  id           author year type dose cases    n      logrr        se gender   area
+1  1   LeGrady et al. 1987   ci  0.5    57  249  0.0000000 0.0000000      M    USA
+2  1   LeGrady et al. 1987   ci  2.5   136  655 -0.2876821 0.1391187      M    USA
+3  1   LeGrady et al. 1987   ci  4.5   144  619 -0.1743534 0.1373198      M    USA
+4  1   LeGrady et al. 1987   ci  6.5   115  387  0.0861777 0.1401409      M    USA
+5  2 Rosengren et al. 1991   ci  0.0    17  192  0.0000000 0.0000000      M Europe
+6  2 Rosengren et al. 1991   ci  1.5    88 1121 -0.1203576 0.2531537      M Europe</code></pre>
+<div id="single-study-analysis" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Single study analysis<a href="results.html#single-study-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We showed how to estimate the dose–response association in a single study. For that purpose, we selected the first study ID 1 consisting of 3 non-referent log relative risks <span class="citation">(<a href="#ref-legrady1987coffee">Legrady et al., 1987</a>)</span>. One relevant feature of aggregated dose–response data is the correlation arising from having a common comparator. The <code>covar.logrr</code> function can be used to reconstruct the covariance matrix accordingly to the method by <span class="citation">Greenland &amp; Longnecker (<a href="#ref-greenland1992methods">1992</a>)</span>.</p>
+<pre class="text"><code>R&gt; legrady &lt;- subset(coffee_mort, id == 1)
+R&gt; covar.logrr(cases = cases, n = n, y = logrr, v = se^2, type = type, 
++             data = legrady)</code></pre>
+<pre><code>           [,1]       [,2]       [,3]
+[1,] 0.01935402 0.01279718 0.01259433
+[2,] 0.01279718 0.01885673 0.01254856
+[3,] 0.01259433 0.01254856 0.01963947</code></pre>
+<p>The alternative method by <span class="citation">Hamling et al. (<a href="#ref-hamling2008facilitating">2008</a>)</span> can be used by specifying <code>covariance = "h"</code> in the <code>covar.logrr</code> function. The reconstructed covariance matrix is used to efficiently estimate the dose–response association. For example, a linear trend <span class="math inline">\(y_{1j} = \beta_1 (x_{1j} - x_{10}) + \varepsilon_{1j}\)</span> can be estimated with</p>
+<pre class="text"><code>R&gt; lin_le &lt;- dosresmeta(logrr ~ dose, se = se, type = type, cases = cases, n = n, 
++                      data = legrady)
+R&gt; lin_le</code></pre>
+<pre><code>Call:  dosresmeta(formula = logrr ~ dose, type = type, cases = cases, 
+    n = n, data = legrady, se = se)
+
+Fixed-effects coefficients:
+  dose  
+0.0328  
+
+1 study 3 values, 1 fixed and 0 random-effects parameters
+ logLik      AIC      BIC  
+-0.7914   3.5827   2.6813  </code></pre>
+<p>The change in the log relative risk of all-cause mortality associated with a 1 cup/day increase in coffee consumption was 0.033. That is, the increment of 1 cup/day of coffee was associated with a 3.4% (<span class="math inline">\(\exp(0.033) = 0.033\)</span>) higher mortality risk.
+The <code>predict</code> method facilitates the computation for the predicted linear increase for any arbitrary amount of coffee consumption. For example, setting <code>delta = 3</code></p>
+<pre class="text"><code>R&gt; predict(lin_le, delta = 3, expo = TRUE)</code></pre>
+<pre><code> delta     pred     ci.lb    ci.ub
+     3 1.103507 0.9744976 1.249596</code></pre>
+<p>In the study by <span class="citation">Legrady et al. (<a href="#ref-legrady1987coffee">1987</a>)</span>, 3 cups/day increase in coffee consumption was associate with a 10% (95% CI 0.97, 1.25) higher mortality risk.</p>
+<p>Alternative curves can be specified in the formula argument. For example, a quadratic trend <span class="math inline">\(y_{1j} = \beta_1 (x_{1j} - x_{10}) + \beta_2 (x_{1j}^2 - x_{10}^2) + \varepsilon_{1j}\)</span> can be estimated.</p>
+<pre class="text"><code>R&gt; quadr_le &lt;- dosresmeta(logrr ~ dose + I(dose^2), se = se, type = type,
++                      cases = cases, n = n, data = legrady)
+R&gt; quadr_le</code></pre>
+<pre><code>Call:  dosresmeta(formula = logrr ~ dose + I(dose^2), type = type, cases = cases, 
+    n = n, data = legrady, se = se)
+
+Fixed-effects coefficients:
+     dose  I(dose^2)  
+  -0.2135     0.0334  
+
+1 study 3 values, 2 fixed and 0 random-effects parameters
+ logLik      AIC      BIC  
+ 3.5738  -3.1475  -4.9503  </code></pre>
+<p>The coefficients of the quadratic model are not directly interpretable. The results can be instead presented in terms of predicted relative risks for selected values of coffee consumption.</p>
+<pre class="text"><code>R&gt; predict(quadr_le, newdata = data.frame(dose = 0:6), expo = TRUE)</code></pre>
+<pre><code>  dose I(dose^2)      pred     ci.lb     ci.ub
+1    0         0 1.0000000 1.0000000 1.0000000
+2    1         1 0.8352219 0.7209175 0.9676497
+3    2         4 0.7458585 0.5796705 0.9596916
+4    3         9 0.7121374 0.5191844 0.9768005
+5    4        16 0.7269823 0.5166453 1.0229519
+6    5        25 0.7934812 0.5680037 1.1084654
+7    6        36 0.9259812 0.6805480 1.2599276</code></pre>
+<p>The quadratic model suggested a U-shaped inverse association, with the maximum risk reduction, 29% (95% CI 0.52, 0.98), observed for 3 cups/day of coffee compared.</p>
+</div>
+<div id="multiple-studies" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Multiple studies<a href="results.html#multiple-studies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The chosen curves can be estimated also for the other studies. One possibility is to use the <strong>tidyverse</strong> package <span class="citation">(<a href="#ref-tidyverse">Wickham, 2017</a>)</span> in order to obtain the linear trends and corresponding variances.</p>
+<pre class="text"><code>R&gt; library(tidyverse)
+R&gt; lin_i &lt;- coffee_mort %&gt;%
++   split(.$id) %&gt;%
++   map(~ dosresmeta(logrr ~ dose, se = se, type = type,
++                    cases = cases, n = n, data = .x))
+R&gt; lin_bi &lt;- map_dbl(lin_i, ~ coef(.x))
+R&gt; lin_vi &lt;- map_dbl(lin_i, ~ vcov(.x))
+R&gt; head(cbind(bi = lin_bi, vi = lin_vi))</code></pre>
+<pre><code>           bi           vi
+1  0.03283124 4.470869e-04
+2 -0.02360445 3.561441e-04
+3 -0.01430817 5.833618e-05
+4 -0.04777017 6.194806e-04
+5 -0.04736154 1.219069e-03
+6 -0.02027627 1.127937e-04</code></pre>
+<p>The mean linear trend can be calculated with standard packages for meta-analysis such as the <strong>mvmeta</strong> package <span class="citation">(<a href="#ref-gasparrini2012multivariate">Gasparrini et al., 2012</a>)</span>.</p>
+<pre class="text"><code>R&gt; mvmeta(lin_bi, lin_vi)</code></pre>
+<pre><code>Call:  mvmeta(formula = lin_bi ~ 1, S = lin_vi)
+
+Fixed-effects coefficients:
+(Intercept)  
+    -0.0326  
+
+22 studies, 22 observations, 1 fixed and 1 random-effects parameters
+  logLik       AIC       BIC  
+ 36.0221  -68.0442  -65.9551  </code></pre>
+<p>Alternatively, the two steps of a two-stage analysis (dose–response and pooling) are unified and simplified in the <strong>dosresmeta</strong> function. In a single call, the study-specific linear trends are estimated and combined with the results being stored in the <code>lin</code> object.</p>
+<pre class="text"><code>R&gt; lin &lt;- dosresmeta(logrr ~ dose, id = id, se = se, type = type,
++             cases = cases, n = n, data = coffee_mort)</code></pre>
+<p>The <code>summary</code> method displays the measures and tests of interest.</p>
+<pre class="text"><code>R&gt; summary(lin)</code></pre>
+<pre><code>Call:  dosresmeta(formula = logrr ~ dose, id = id, type = type, cases = cases, 
+    n = n, data = coffee_mort, se = se)
+
+Two-stage random-effects meta-analysis
+Estimation method: REML
+Covariance approximation: Greenland &amp; Longnecker
+
+Chi2 model: X2 = 41.8249 (df = 1), p-value = 0.0000
+
+Fixed-effects coefficients
+             Estimate  Std. Error        z  Pr(&gt;|z|)  95%ci.lb  95%ci.ub
+(Intercept)   -0.0326      0.0050  -6.4672    0.0000   -0.0424   -0.0227
+
+
+Between-study random-effects (co)variance components
+  Std. Dev
+    0.0172
+
+Univariate Cochran Q-test for residual heterogeneity:
+Q = 77.0088 (df = 21), p-value = 0.0000
+I-square statistic = 72.7%
+
+22 studies, 22 values, 1 fixed and 1 random-effects parameters
+  logLik       AIC       BIC  
+ 37.5676  -71.1352  -69.0462  </code></pre>
+<p>There was an inverse association between increasing levels of coffee consumption and all-cause mortality risk, with a mean relative risk of <span class="math inline">\(\exp(-0.03) = 0.97\)</span> for a 1 cup/day increase. Similarly to the single study analysis, the <code>predict</code> function returns the combined result for any amount of coffee consumption.</p>
+<pre class="text"><code>R&gt; predict(lin, delta = 3, expo = T)</code></pre>
+<pre><code> delta      pred     ci.lb     ci.ub
+     3 0.9069399 0.8804854 0.9341891</code></pre>
+<p>The linear trend appeared to be heterogeneous as indicated by both the <span class="math inline">\(Q\)</span> test (<span class="math inline">\(Q\)</span> = 77, <span class="math inline">\(p\)</span> value &lt; 0.01) and <span class="math inline">\(I^2 = 73\)</span>%.
+A possible alternative for both reducing the observed heterogeneity and relaxing the linearity assumption is to model the dose–response as a quadratic curve.</p>
+<pre class="text"><code>R&gt; quadr &lt;- dosresmeta(logrr ~ dose + I(dose^2), id = id, se = se, type = type,
++                     cases = cases, n = n, data = coffee_mort)
+R&gt; summary(quadr)</code></pre>
+<pre><code>Call:  dosresmeta(formula = logrr ~ dose + I(dose^2), id = id, type = type, 
+    cases = cases, n = n, data = coffee_mort, se = se)
+
+Two-stage random-effects meta-analysis
+Estimation method: REML
+Covariance approximation: Greenland &amp; Longnecker
+
+Chi2 model: X2 = 75.9674 (df = 2), p-value = 0.0000
+
+Fixed-effects coefficients
+           Estimate  Std. Error        z  Pr(&gt;|z|)  95%ci.lb  95%ci.ub
+dose        -0.0847      0.0138  -6.1315    0.0000   -0.1118   -0.0576
+I(dose^2)    0.0095      0.0023   4.1751    0.0000    0.0050    0.0139
+
+
+Between-study random-effects (co)variance components
+           Std. Dev     Corr
+dose         0.0491     dose
+I(dose^2)    0.0081  -0.9811
+
+Univariate Cochran Q-test for residual heterogeneity:
+Q = 113.4826 (df = 42), p-value = 0.0000
+I-square statistic = 63.0%
+
+22 studies, 44 values, 2 fixed and 3 random-effects parameters
+   logLik        AIC        BIC  
+  99.3250  -188.6501  -179.9617  </code></pre>
+<p>The overall test <span class="math inline">\(H_0: \beta_1 = \beta_2 = 0\)</span> (<code>Chi2 model</code>) indicated that the mortality risk significantly varied according to coffee consumption levels (<span class="math inline">\(\chi_2^2\)</span> = 76, <span class="math inline">\(p\)</span> value &lt; 0.001). The quadratic model reduces to the simpler linear trend analysis when <span class="math inline">\(\beta_2 = 0\)</span>. Thus, the univariate test for <span class="math inline">\(\beta_2\)</span> (<span class="math inline">\(z\)</span> = 4.18, <span class="math inline">\(p\)</span> value &lt; 0.001) suggested that the all-cause mortality risk was related in a non-linear fashion with coffee consumption. The heterogeneity in the study-specific regression coefficients was reduced but its impact was still important, with the multivariate <span class="math inline">\(I^2\)</span> = 63%.</p>
+<p>The predicted log relative risks from the linear and quadratic analyses can be presented in a graphical format using <span class="math inline">\(x_\mathrm{ref} = 0\)</span> cups/day as referent (Figure <a href="results.html#fig:pred-fig">5.1</a>).</p>
+<pre class="text"><code>R&gt; xref &lt;- 0
+R&gt; pred &lt;- data.frame(dose = c(xref, seq(0, 8, .1))) %&gt;%
++   predict(quadr, newdata = ., expo = T) %&gt;%
++   cbind(lin = predict(lin, newdata = ., expo = T))
+R&gt; ggplot(pred, aes(dose, pred, ymin = ci.lb, ymax = ci.ub)) +
++   geom_line() + geom_ribbon(alpha = .1) +
++   geom_line(aes(y = lin.pred), linetype = &quot;dashed&quot;) +
++   scale_y_continuous(trans = &quot;log&quot;, breaks = scales::pretty_breaks()) +
++   labs(x = &quot;Coffee consumption (cups/day)&quot;, y = &quot;Relative Risk&quot;)</code></pre>
+<div class="figure"><span style="display:block;" id="fig:pred-fig"></span>
+<img src="thesis_files/figure-html/pred-fig-1.png" alt="Combined dose--response association between coffee consumption and all-cause mortality (solid line) with 95% confidence intervals (shaded area). Coffee consumption was modelled with a quadratic curve in a two-stage random-effects meta-analysis. The dashed line represents the combined linear trend. The value 0 cups/day served as referent. The relative risks are plotted on the log scale." width="672" />
+<p class="caption">
+Figure 5.1: Combined dose–response association between coffee consumption and all-cause mortality (solid line) with 95% confidence intervals (shaded area). Coffee consumption was modelled with a quadratic curve in a two-stage random-effects meta-analysis. The dashed line represents the combined linear trend. The value 0 cups/day served as referent. The relative risks are plotted on the log scale.
+</p>
+</div>
+<p>Alternatively, the predicted relative risks for desired exposure values, say from 0 to 5 cups/day can be presented in a table.</p>
+<pre class="text"><code>R&gt; filter(pred, dose %in% 0:5) %&gt;%
++   select(-`I(dose^2)`, -lin.dose) %&gt;% 
++   unique() %&gt;% round(3)</code></pre>
+<pre><code>   dose  pred ci.lb ci.ub lin.pred lin.ci.lb lin.ci.ub
+1     0 1.000 1.000 1.000    1.000     1.000     1.000
+12    1 0.928 0.907 0.949    0.968     0.958     0.978
+22    2 0.877 0.845 0.910    0.937     0.919     0.956
+32    3 0.845 0.808 0.883    0.907     0.880     0.934
+42    4 0.829 0.793 0.867    0.878     0.844     0.913
+52    5 0.829 0.795 0.865    0.850     0.809     0.893</code></pre>
+<p>The previous predictions can be easily re-expressed using a different exposure value as referent, e.g. 1.5 cup/day, by changing <code>xref &lt;- 1.5</code> and rerunning the previous code to produce a new figure or table.</p>
+<p>The study-specific dose–response coefficients and related covariance matrices are stored in the results and can be easily accessed. For example, the <span class="math inline">\(\boldsymbol{\hat \beta}_i\)</span> and <span class="math inline">\(\widehat{\textrm{Var}} \left( \boldsymbol{\hat \beta}_i \right)\)</span> for the quadratic model in the first two studies are</p>
+<pre class="text"><code>R&gt; quadr$bi[1:2, ]</code></pre>
+<pre><code>          dose    I(dose^2)
+1 -0.213506072  0.033448197
+2 -0.008546787 -0.001605319</code></pre>
+<pre class="text"><code>R&gt; quadr$Si[1:2]</code></pre>
+<pre><code>[[1]]
+              [,1]          [,2]
+[1,]  0.0073978648 -0.0009437912
+[2,] -0.0009437912  0.0001281500
+
+[[2]]
+              [,1]          [,2]
+[1,]  0.0043603384 -4.268928e-04
+[2,] -0.0004268928  4.551165e-05</code></pre>
+<p>and can be used to plot the individual curves in Figure <a href="appendix-b-supplementary-figures.html#fig:p-indiv">B.1</a>.</p>
+<pre class="text"><code>R&gt; newd &lt;- data.frame(dose = c(xref, seq(0, 6, .1)))
+R&gt; p_indiv &lt;- cbind(newd, map(array_branch(quadr$bi, 1),
++                            ~ exp(.x[1]*newd$dose + .x[2]*newd$dose^2))) %&gt;%
++   gather(study, pred, -dose) %&gt;%
++   ggplot(aes(dose, pred, group = study)) + geom_line() +
++   scale_y_continuous(&quot;Relative Risk&quot;, trans = &quot;log&quot;, breaks = c(.5, 1, 2, 5, 10), 
++                   limits = c(.25, 10)) + labs(x = &quot;Coffee consumption (cups/day)&quot;)</code></pre>
+<p>The previous analyses suggested that coffee consumption may be inversely associated with all-cause mortality in a non-linear fashion. The highest risk reduction, 17% (95% CI 0.79, 0.87), was observed for 4 cups/day of coffee consumption.</p>
+</div>
+</div>
+<div id="sec:res-paperII" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Paper II<a href="results.html#sec:res-paperII" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We used the tools presented in Section @ref{sec:gof} to evaluate the goodness-of-fit of the previous analyses. The <code>gof</code> function returns a display of the quantities of interest, namely the deviance test and the adjusted and unadjusted <span class="math inline">\(R^2\)</span>.
+We started with the simpler linear trend estimated in a fixed-effect analysis.</p>
+<pre class="text"><code>R&gt; gof(lin, fixed = TRUE)</code></pre>
+<pre><code>Goodness-of-fit statistics:
+
+Deviance test: 
+D = 225.244 (df = 78), p-value = 0.000
+
+Coefficient of determination R-squared: 0.488 
+Adjusted R-squared: 0.482</code></pre>
+<p>The fit for the model assuming a linear relationship was poor (Analysis A in Table <a href="results.html#tab:gof-tab">5.1</a>). In particular, the deviance test rejected the null hypothesis that the model was properly specified (<span class="math inline">\(D\)</span> = 225.2, <span class="math inline">\(p\)</span> value &lt; 0.001) while the percentage of the accounted variation by the analysis was 49%. In addition, the decorrelated residuals vs exposure plot in panel A of Figure <a href="results.html#fig:gof-pic">5.2</a> indicated a specific pattern with negative residuals for low values of the exposure (before 5 cups/day) and positive ones for high levels of coffee consumption.</p>
+<p>A possible solution for addressing the lack of fit of the previous analysis is to consider a non-linear example such as a quadratic curve (Analysis B). The fit slightly improved as indicated by which increased to 65% ( = 0.64). The deviance test, however, still showed evidence of lack of fit (<span class="math inline">\(D\)</span> = 155.1, <span class="math inline">\(p\)</span> value &lt; 0.001). Furthermore, even if the variability of the residuals reduced (panel B of Figure @ref(fig:gof_pic)), the LOWESS smoother showed a tendency for the residuals to be more likely negative for low and very high exposure values.</p>
+<div class="figure"><span style="display:block;" id="fig:gof-pic"></span>
+<img src="thesis_files/figure-html/gof-pic-1.png" alt="Decorrelated residuals versus exposure plots with LOWESS smother for different modelling strategies in a dose--response meta-analysis between coffee consumption and all-cause mortality [@crippa2014coffee]." width="672" />
+<p class="caption">
+Figure 5.2: Decorrelated residuals versus exposure plots with LOWESS smother for different modelling strategies in a dose–response meta-analysis between coffee consumption and all-cause mortality <span class="citation">(<a href="#ref-crippa2014coffee">Crippa et al., 2014</a>)</span>.
+</p>
+</div>
+<p>An alternative strategy (Analysis C) was to model coffee consumption using RCS with 3 knots located at the fixed quantiles 0.10, 0.5, and 0.9 corresponding to 0, 2, 6.5 cups/day. Since the number of parameters is the same as in the Analysis B (<span class="math inline">\(p\)</span> = 2), the can be used to compare the fit of the two strategies. In particular, the RCS analysis had a better fit, as indicated by the higher = 0.68 ( = 0.67). The pattern in the residuals also leveled off around zero with the exception for the 3 highest dose levels. The deviance test, however, rejected again the null hypothesis for model specification, possibly because of the heterogeneity in the individual curves.</p>
+<p>Coffee consumption varies substantially across countries both in terms of coffee powder, methods of preparation, and amount of cup size. In addition, the effect of coffee on all-cause mortality may have a different impact depending on the sex of participants. To address this variability, we employed meta-regression models to explain differences across the studies (Analysis D). We included two study-level covariates indicating the geographical area where the study was conducted (Europa, USA, and Japan) and the sex of the participants (only men, only women, and both sexes). Both the decorrelated vs exposure plot and = 0.74 indicated an improvement in the overall fit of the analysis even if the <span class="math inline">\(p\)</span> value for the deviance test was below the nominal value (<span class="math inline">\(D\)</span> = 100.4, <span class="math inline">\(p\)</span> value = 0.008).</p>
+<table class="table" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>
+<span id="tab:gof-tab">Table 5.1: </span><span id="tab:gof-tab">Table 5.2: </span>Goodness-of-fit tests and measures for dose–response meta-analysis of coffee consumption and all-cause mortality
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Analysis
+</th>
+<th style="text-align:center;">
+Model
+</th>
+<th style="text-align:center;">
+Deviance
+</th>
+<th style="text-align:center;">
+df
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(p\)</span> value
+</th>
+<th style="text-align:center;">
+
+</th>
+<th style="text-align:center;">
+
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;width: 5.8cm; ">
+Linear
+</td>
+<td style="text-align:center;">
+225.244
+</td>
+<td style="text-align:center;">
+78
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.488
+</td>
+<td style="text-align:center;">
+0.482
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;width: 5.8cm; ">
+Quadratic
+</td>
+<td style="text-align:center;">
+155.093
+</td>
+<td style="text-align:center;">
+77
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.648
+</td>
+<td style="text-align:center;">
+0.638
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;width: 5.8cm; ">
+RCS
+</td>
+<td style="text-align:center;">
+141.332
+</td>
+<td style="text-align:center;">
+77
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.679
+</td>
+<td style="text-align:center;">
+0.671
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;width: 5.8cm; ">
+RCS + interaction
+</td>
+<td style="text-align:center;">
+100.372
+</td>
+<td style="text-align:center;">
+69
+</td>
+<td style="text-align:center;">
+0.008
+</td>
+<td style="text-align:center;">
+0.772
+</td>
+<td style="text-align:center;">
+0.739
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>a</sup> 3 knots located at the 10th, 50th, and 90th percentiles of the distribution of coffee.
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>b</sup> As in c) + interaction with gender of participants (only men, only women, both sexes) and geographical area (Europe, USA, Japan) included as categorical study-level covariates.
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div id="sec:res-paperIII" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Paper III<a href="results.html#sec:res-paperIII" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We illustrated how to employ the new measure of heterogeneity, <span class="math inline">\(\hat R_b\)</span>, reanalyzing aggregated dose–response data on the association between meat and bladder cancer <span class="citation">(<a href="#ref-crippa2016red">Crippa, Larsson, et al., 2016</a>)</span>. Five cohort and 8 case-control studies reported results for either red or processed meat and bladder cancer risk including a total of 10,271 cases and 1,066,027 participants. The data for both the associations are also included in the <code>dosresmeta</code> package.</p>
+<div id="processed-meat-and-bladder-cancer" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Processed meat and bladder cancer<a href="results.html#processed-meat-and-bladder-cancer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We started by considering a linear trend analysis for the association between processed meat and bladder cancer risk. The effect sizes for the meta-analysis in the second part of a two-stage dose–response meta-analysis were the linear trends for a 50 g per day increase in processed meat consumption (Figure <a href="results.html#fig:forest-pr">5.3</a>). The combined relative risk was 1.2 (95% CI 1.06, 1.37). The <span class="math inline">\(Q\)</span> test detected statistical heterogeneity (<span class="math inline">\(Q\)</span> = 17.2, <span class="math inline">\(p\)</span> value = 0.07). The <span class="math inline">\(\hat R_b\)</span> = 38% (95% CI 37, 40) indicated that the contribution of heterogeneity in the pooled analysis was limited (Table <a href="results.html#tab:tab-rb">5.3</a>), as also suggested by the alternative measures <span class="math inline">\(I^2\)</span> = 42% (95% CI 40, 43) and <span class="math inline">\(R_I\)</span> = 43% (95% CI 41, 44). Because the within-study variances were substantially homogenous, the differences between the alternative measures were negligible.</p>
+<p>No evidence of non-linearity was observed using either a quadratic curve (<span class="math inline">\(p\)</span> value = 0.96) or a RCS model with 3 knots located at fixed percentiles (<span class="math inline">\(p\)</span> value = 0.92).</p>
+<div class="figure"><span style="display:block;" id="fig:forest-pr"></span>
+<img src="thesis_files/figure-html/forest-pr-1.png" alt="Relative risks of bladder cancer for every 50 g increase per day in processed meat consumption." width="672" />
+<p class="caption">
+Figure 5.3: Relative risks of bladder cancer for every 50 g increase per day in processed meat consumption.
+</p>
+</div>
+</div>
+<div id="red-meat-and-bladder-cancer" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Red meat and bladder cancer<a href="results.html#red-meat-and-bladder-cancer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An analogous analysis was conducted for the association between red meat consumption and bladder cancer risk, with the estimated linear trends expressed for a 100 g per day increase <span class="citation">(<a href="#ref-crippa2016red">Crippa, Larsson, et al., 2016</a>)</span>. The pooled relative risk was 1.22 (95% CI 1.05, 1.41). The study-specific associations in Figure <a href="results.html#fig:forest-red">5.4</a>, however, appeared to be heterogeneous (<span class="math inline">\(Q\)</span> = 60, <span class="math inline">\(p\)</span> value &lt; 0.01). In particular, the contribution of the heterogeneity in determining the variance of the combined effect was <span class="math inline">\(\hat R_b\)</span> = 67%, indicating a moderate impact. Given that the distribution of within-error terms was higher as compared to the previous analysis (Figure <a href="appendix-b-supplementary-figures.html#fig:fig-dist-vi">B.2</a>), the differences with the alternative measures were higher: <span class="math inline">\(I^2\)</span> = 80% (95% CI 79, 81) and <span class="math inline">\(R_I\)</span> = 89% (95% CI 88, 89), which suggested a larger heterogeneity across the study specific trends.</p>
+<p>Similarly to the case of processed meat, no evidence of non-linearity was found (<span class="math inline">\(p\)</span> value equal to 0.73 and 0.74 for <span class="math inline">\(\beta_2\)</span> in the quadratic and RCS model.)</p>
+<div class="figure"><span style="display:block;" id="fig:forest-red"></span>
+<img src="thesis_files/figure-html/forest-red-1.png" alt="Relative risks of bladder cancer for every 100 g increase per day in red meat consumption, separately for cohort and case-control studies." width="672" />
+<p class="caption">
+Figure 5.4: Relative risks of bladder cancer for every 100 g increase per day in red meat consumption, separately for cohort and case-control studies.
+</p>
+</div>
+<p>The variability across the linear trends could be related to differences in the study design. Figure <a href="results.html#fig:forest-red">5.4</a> reports also the results separately for cohort and case-control studies. No association was observed in the subset of the prospective studies (combined RR = 1.01 (95% CI 0.97, 1.06)). The individual associations were homogenous (<span class="math inline">\(Q\)</span> = , <span class="math inline">\(p\)</span> value = ), with <span class="math inline">\(\hat R_b\)</span> = 0%. The results for case-control studies, instead, largely varied across studies <span class="math inline">\(Q\)</span> = 39.8, <span class="math inline">\(p\)</span> value &lt; 0.01 and <span class="math inline">\(\hat R_b\)</span> = 81%. A summary of the results for the alternative measures of heterogeneity in the different analyses is presented in Table <a href="results.html#tab:tab-rb">5.3</a>.</p>
+<table class="table" style="font-size: 8.5px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:tab-rb">Table 5.3: </span><span id="tab:tab-rb">Table 5.4: </span>Measures of heterogeneity for dose–response meta-analysis between processed and red meat and bladder cancer risk <span class="citation">(<a href="#ref-crippa2016red">Crippa, Larsson, et al., 2016</a>)</span>.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Analysis
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat \beta\)</span> (95% CI)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(Q\)</span> test, <span class="math inline">\(p\)</span> values
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(CV_{v_i}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat R_b\)</span> (95% CI)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(I^2\)</span> (95% CI)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat R_I\)</span> (95% CI)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Processed meat
+</td>
+<td style="text-align:center;">
+1.2 (1.06, 1.37)
+</td>
+<td style="text-align:center;">
+17, 0.07
+</td>
+<td style="text-align:center;">
+0.33
+</td>
+<td style="text-align:center;">
+38 (37, 40)
+</td>
+<td style="text-align:center;">
+42 (40, 43)
+</td>
+<td style="text-align:center;">
+43 (41, 44)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Red meat
+</td>
+<td style="text-align:center;">
+1.22 (1.05, 1.41)
+</td>
+<td style="text-align:center;">
+60, &lt; 0.01
+</td>
+<td style="text-align:center;">
+5.94
+</td>
+<td style="text-align:center;">
+67 (66, 68)
+</td>
+<td style="text-align:center;">
+80 (79, 81)
+</td>
+<td style="text-align:center;">
+89 (88, 89)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Red meat, Prospective
+</td>
+<td style="text-align:center;">
+1.01 (0.97, 1.06)
+</td>
+<td style="text-align:center;">
+4, 0.6
+</td>
+<td style="text-align:center;">
+3.51
+</td>
+<td style="text-align:center;">
+0 (0, 4)
+</td>
+<td style="text-align:center;">
+0 (0, 8)
+</td>
+<td style="text-align:center;">
+0 (0, 100)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Red meat, Case-control
+</td>
+<td style="text-align:center;">
+1.51 (1.13, 2.02)
+</td>
+<td style="text-align:center;">
+40, &lt; 0.01
+</td>
+<td style="text-align:center;">
+0.36
+</td>
+<td style="text-align:center;">
+81 (80, 82)
+</td>
+<td style="text-align:center;">
+85 (84, 86)
+</td>
+<td style="text-align:center;">
+86 (85, 86)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="sec:res-paperIV" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Paper IV<a href="results.html#sec:res-paperIV" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The proposed and alternative measures of between-studies variability cannot capture the heterogeneity related to differences in the exposure range distribution. We presented the implementation of a point-wise strategy as a possible remedy, reanalyzing the data between red meat consumption and bladder cancer risk described in the previous section.
+The data consists of 13 independent studies where the exposure varied across studies not only in terms of definition and measurement but also in terms of range of assessment. For example, the minimum red meat consumption in one study (85.5 g per day in study ID 7) was higher then the maximum exposure value in other studies (71.7 g per day in study ID 3). Furthermore, only 3 out 13 studies reported relative risks for meat consumption greater than 150 grams/day. Descriptive measures of red meat consumption across studies are reported in Table @ref(tab-chr_redtab) and graphically presented in Figure <a href="appendix-b-supplementary-figures.html#fig:p-chr">B.3</a>.</p>
+<p>We decided to model the association using FP2. To allow for differential dose–response relationships, we fitted the FP2 models for different combination of power terms separately in each studies and selected the study-specific best fitting polynomials as the model with the lowest AIC. As expected, the best study-specific power terms varied across studies (Table <a href="appendix-c-supplementary-tables.html#tab:AIC-pi-red">C.2</a>), with the most common polynomial defined by <span class="math inline">\(p = (-2, -2)\)</span> (8 out of 13 studies). Interestingly, the corresponding analysis using the AIC from the a one-stage model selected <span class="math inline">\(p = (-1, -0.5)\)</span> as the best FP2, a combination of power terms that was not preferred in any of the individual dose–response analyses. Figure <a href="results.html#fig:pbi-plot-red">5.5</a> displays the predicted curves based on the best FP2 for each study, limited to the observed exposure range (blue solid lines). Extrapolation are represented by dashed lines while the red curves represent the predicted association from the one-stage model, which imposed the common power terms <span class="math inline">\(p = (-1, -0.5)\)</span> across the studies. While the alternative strategies gave similar results in the observed exposure range, larger differences were observed for high levels of red meat consumption. Taking study ID 5 as an example, the predicted relative risks for 150 g compared to 15 g of red meat consumption per day were 2.14 (95 CI 0.81, 5.67) and 1.13 (95% CI 0.84, 1.53) for the FP2 with the study specific <span class="math inline">\(p_5 = (3, 3)\)</span> and the common power terms <span class="math inline">\(p = (-1, -0.5)\)</span>, respectively.</p>
+<div class="figure"><span style="display:block;" id="fig:pbi-plot-red"></span>
+<img src="thesis_files/figure-html/pbi-plot-red-1.png" alt="Study-specific dose--response curve between red meat consumption and bladder cancer risk. Blue and red solid lines are the predicted relative risks based, respectively, on the best fitting fractional polynomial (FP2) and on a common FP2 with p = (-1, -.5) limited to the observed exposure range. Dashed lines indicate extrapolated predicted relative risks. Confidence intervals for best fitting FP2 are represented by shaded areas (lighter colors correspond to extrapolations). All predicted relative risks are presented on the log scale using the study-specific reference values as comparators." width="672" />
+<p class="caption">
+Figure 5.5: Study-specific dose–response curve between red meat consumption and bladder cancer risk. Blue and red solid lines are the predicted relative risks based, respectively, on the best fitting fractional polynomial (FP2) and on a common FP2 with p = (-1, -.5) limited to the observed exposure range. Dashed lines indicate extrapolated predicted relative risks. Confidence intervals for best fitting FP2 are represented by shaded areas (lighter colors correspond to extrapolations). All predicted relative risks are presented on the log scale using the study-specific reference values as comparators.
+</p>
+</div>
+<p>In a point-wise dose–response meta-analysis, we chose to predict the study specific log relative risks for a fine grid of exposure values ranging from 5 g to 300 g with step by 5 g, using 85 g/day (median reference dose value) as referent. The study-specific predictions were limited to the observed exposure range so that study ID 3, for example, predicted log RRs for dose values up to 70 g/days. Thus, the number of study-specific predicted log RRs varies across the selected red meat consumption levels.</p>
+<div class="figure"><span style="display:block;" id="fig:pwa"></span>
+<img src="thesis_files/figure-html/pwa-1.png" alt="Comparison between pointwise and one-stage predicted relative risks for the association between red meat consumption (g per day) and bladder cancer risk. The step function at the bottom indicates the number of studies contributing to the prediction in the pointwise analysis. The relative risks are presented on the log scale using 85 g per day as referent." width="672" />
+<p class="caption">
+Figure 5.6: Comparison between pointwise and one-stage predicted relative risks for the association between red meat consumption (g per day) and bladder cancer risk. The step function at the bottom indicates the number of studies contributing to the prediction in the pointwise analysis. The relative risks are presented on the log scale using 85 g per day as referent.
+</p>
+</div>
+<p>The combined results from the 59 meta-analyses can be presented pointwisely. Figure <a href="results.html#fig:pwa">5.6</a> plots the combined predicted relative risk from a point-wise strategy and compares them with the corresponding one-stage analysis. In the reanalyzed data, the two strategies provided similar point estimates. However, the confidence intervals from the point-wise analysis were larger as compared to the corresponding one-stage model, reflecting the higher uncertainty in the predictions. For example, for 100 g the predicted RRs were 0.92 (95% CI 0.80, 1.07) for the point-wise strategy and 1.11 (95% CI 1.03, 1.19) for the one-stage model. Similarly, for 250 g the two predictions were 1.27 (95% CI 0.71, 2.26) and 1.20 (95% CI 1.05, 1.38).</p>
+<div class="figure"><span style="display:block;" id="fig:pwa-results"></span>
+<img src="thesis_files/figure-html/pwa-results-1.png" alt="Point-wise results for a meta-analysis between red meat consumption (g per day) and bladder cancer risk: estimates of $\hat \tau^2$ (A), random-effects weights for three studies (B), $p$ value for ther $Q$ test (C), and $\hat R_b$ (D)." width="672" />
+<p class="caption">
+Figure 5.7: Point-wise results for a meta-analysis between red meat consumption (g per day) and bladder cancer risk: estimates of <span class="math inline">\(\hat \tau^2\)</span> (A), random-effects weights for three studies (B), <span class="math inline">\(p\)</span> value for ther <span class="math inline">\(Q\)</span> test (C), and <span class="math inline">\(\hat R_b\)</span> (D).
+</p>
+</div>
+<p>One advantage of a point-wise strategy is that additional statistics from the meta-analytic models can be presented pointwisely (Figure <a href="results.html#fig:pwa-results">5.7</a>). For example, the estimates for the between-study heterogeneity, <span class="math inline">\(\hat \tau^2\)</span>, were lower than 0.02 for red meat consumption between 20 g and 150 g per day, and rapidly increased for higher values (panel A). The weights of the individual studies changed over the range of the exposure values. Panel B displays the standardized weights for three of the included studies. The percentage weight for study ID 5 was very large for red meat consumption lower than 30 g, while it stabilized around 15% after that. For study ID 10, the weight declined from 20% to 5% as the dose value increased, while it remained constant around 3% for study ID 1. The results from the <span class="math inline">\(Q\)</span> test in panel C indicated presence of statistical heterogeneity for red meat consumption betwee 100 and 200 g. The impact of heterogeneity quantified by the <span class="math inline">\(\hat R_b\)</span> varied between 25% and 60% for exposure values below 75 g per day, while it reached 85% for higher dose levels.</p>
+</div>
+<div id="sec:res-paperV" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Paper V<a href="results.html#sec:res-paperV" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A common limitation of a two-stage and point-wise approach is that the dose–response analyses are limited by the low number of data points in each study, usually <span class="math inline">\(J_i \le 3\)</span>. We demonstrated an alternative one-stage model for dose–response meta-analysis using a subset of the data on coffee consumption and all-cause mortality presented in Sections <a href="results.html#sec:res-paperI">5.1</a> and <a href="results.html#sec:res-paperII">5.2</a>. The data consists of the results for 12 independent populations including 5508 cases and 750959 participants <span class="citation">(<a href="#ref-crippa2014coffee">Crippa et al., 2014</a>)</span>. The results for two cohorts <span class="citation">(<a href="#ref-nilsson2012traditional">Nilsson et al., 2012</a>)</span> were excluded in the initial analysis of a non-linear trend because they only reported 1 non-referent risk. We performed a one-stage random-effects meta-analysis assuming a quadratic relationship on the whole data set and compared the results with the corresponding two-stage analysis which excluded the results by <span class="citation">Nilsson et al. (<a href="#ref-nilsson2012traditional">2012</a>)</span>.</p>
+<p>Although both the analyses suggested a U-shaped association between increasing levels of coffee consumption and mortality risk, the predicted curve from a two-stage model provided lower relative risk estimates (Figure <a href="results.html#fig:comp-osts">5.8</a>). Using 0 cups/day, the predicted RRs for 2 cups/day were 0.86 (95% CI 0.81, 0.91) for the two-stage analysis, and 0.89 (95% CI 0.83, 0.96) for the one-stage model. Similarly, for 5 cups/day the corresponding numbers were 0.78 (95% CI 0.72, 0.84) and 0.82 (95% CI 0.76, 0.89). Interestingly, the standard errors for the beta coefficients were lower in the two-stage analysis <span class="math inline">\(\left( \textrm{SE} \left(\hat \beta_1 \right) = 0.021, \textrm{SE} \left(\hat \beta_2 \right) = 0.003 \right)\)</span>, even if the corresponding estimates from the one-stage analysis were based on a larger number of data points <span class="math inline">\(\left( \textrm{SE} \left(\hat \beta_1 \right) = 0.027, \textrm{SE} \left(\hat \beta_2 \right) = 0.004\right)\)</span>. As a consequence, the confidence intervals for the reported predicted relative risks were larger in the one-stage analysis, while the <span class="math inline">\(p\)</span> value for non-linearity <span class="math inline">\(H_0: \beta_2 = 0\)</span> was lower in a two-stage analysis: <span class="math inline">\(p\)</span> = 0.008 compared to <span class="math inline">\(p\)</span> = 0.154 from the alternative one-stage model.</p>
+<div class="figure"><span style="display:block;" id="fig:comp-osts"></span>
+<img src="thesis_files/figure-html/comp-osts-1.png" alt="Combined quadratic association between coffee consumption (cups/day) and all-cause mortality estimated using a one-stage (blue line) and two-stage (red line) approach. The predicted relative risks are plotted on the log scale using 0 cups/day as referent." width="672" />
+<p class="caption">
+Figure 5.8: Combined quadratic association between coffee consumption (cups/day) and all-cause mortality estimated using a one-stage (blue line) and two-stage (red line) approach. The predicted relative risks are plotted on the log scale using 0 cups/day as referent.
+</p>
+</div>
+<p>The exclusion of 2 studies affected also the estimation of the variance components in <span class="math inline">\(\boldsymbol{\Psi}\)</span>. For example, the variances of the random-effects based on 10 out of the 12 studies (two-stage) were 0.0013 for <span class="math inline">\(b_1\)</span> and 5^{-5} for <span class="math inline">\(b_2\)</span>, while they were 0.00544 and 1.5^{-4}, respectively, in the alternative model. The <span class="math inline">\(I^2\)</span> = 45% from the multivariate two-stage analysis indicated a moderate impact of the heterogeneity. The same question can be addressed in a one-stage analysis by looking at the variance partition coefficients for the observed dose values. The VPC plot suggested a limited impact of heterogeneity between 20 and 40% for coffee consumption below 7 cups/day, while it become substantial for higher exposure values (Figure <a href="appendix-b-supplementary-figures.html#fig:p-coffee-vpc">B.5</a>).</p>
+<p>Oftentimes it can be informative to provide a graphical presentation not only of the marginal association but also of the study-specific or conditional curves. The multivariate normal distribution for the random-effects is used to predict the study-specific regression coefficients, exploiting the information from the between-studies heterogeneity matrix (Table <a href="appendix-c-supplementary-tables.html#tab:blup-tab">C.4</a>).
+It is worthwhile to notice that the non-linear curves in the one-stage approach can be predicted also for those studies providing only one non-referent log RR (study ID 27 and 28), which were instead excluded in the traditional approach. The predicted conditional curves are graphically presented in Figure <a href="results.html#fig:p-grid-coffee">5.9</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:p-grid-coffee"></span>
+<img src="thesis_files/figure-html/p-grid-coffee-1.png" alt="Conditional predicted quadratic curves for the association between coffee consumption and all-cause mortality in a one-stage (blue lines) and two-stage (red lines) approach. The relative risks are presented on the log scale using the study-specific reference categories as comparators." width="672" />
+<p class="caption">
+Figure 5.9: Conditional predicted quadratic curves for the association between coffee consumption and all-cause mortality in a one-stage (blue lines) and two-stage (red lines) approach. The relative risks are presented on the log scale using the study-specific reference categories as comparators.
+</p>
+</div>
+<p>Different strategies can be chosen to model the dose–response association of interest. A one-stage approach, in particular, gives the opportunity to estimate a complex curve defined by multiple parameters in order to answer more elaborate research questions. A model with a spike at zero treats the low or unexposed participants as a separate group, and estimates the dose–response association only for the exposed groups. For example, we can think of the participants drinking a low amount coffee (less than 1 cup/day) as a separate group. The rest of the association can be described by two lines with a different slope before and after 4 cups/day. The mixed of linear splines model can be specified as
+<span class="math display" id="eq:spike-zero">\[\begin{align*}
+\mathbf{y}_i = &amp; (\beta_1 + b_{i1}) \left( \mathbf{I}(\mathbf{x}_{i} &lt; 1) - \mathbf{I}(x_{i0} &lt; 1) \right) +(\beta_2  + b_{i2}) \left( (\mathbf{x}_{i} - 1)\mathbf{I}(\mathbf{x}_{i} \ge 1) - (x_{i0} - 1)\mathbf{I}(x_{i0} \ge 1) \right) + \nonumber +\\ &amp; +(\beta_3  + b_{i3}) \left( (\mathbf{x}_{i} - 4)\mathbf{I}(\mathbf{x}_{i} \ge 4) - (x_{i0} - 4)\mathbf{I}(x_{i0} \ge 4) \right) + \boldsymbol{\epsilon}_{i}
+\tag{5.1}
+\end{align*}\]</span></p>
+<p>where the indicator function <span class="math inline">\(\mathbf{I}\)</span> takes on value 1 if the condition in the parenthesis is met, 0 otherwise.
+Another possibility consists of considering homogeneous groups of exposure in which the mortality risk can be considered constant. For instance, coffee consumption could be divided in intervals <span class="math inline">\(&lt; 1\)</span>, <span class="math inline">\([1, 3)\)</span>, <span class="math inline">\([3, 5)\)</span>, <span class="math inline">\([5, 7)\)</span>, and <span class="math inline">\(&gt; 7\)</span> cups/day. The dose–response model is specified by including 4 dummy variables (<span class="math inline">\(x_1, x_2, x_3\)</span>, and <span class="math inline">\(x_4\)</span>) and using one level (e.g. <span class="math inline">\([1, 3)\)</span>) as referent
+<span class="math display">\[\begin{multline*}
+\mathbf{y}_i =  (\beta_0 + b_{i0}) + (\beta_1 + b_{i1}) (\mathbf{x_1}_{i} - {x_1}_{i0}) + (\beta_2  + b_{i2}) (\mathbf{x_2}_{i} - {x_2}_{i0})
+(\beta_3 + b_{i3}) (\mathbf{x_3}_{i} - {x_3}_{i0}) + \\  + (\beta_4 + b_{i4}) (\mathbf{x_4}_{i} - {x_4}_{i0}) + \boldsymbol{\epsilon}_{i}
+\end{multline*}\]</span></p>
+<p>The two models are parameterized, respectively, by <span class="math inline">\(p = 3\)</span> and <span class="math inline">\(p = 4\)</span> parameters. It is unlikely to have enough data points (at least 4 non referent log RRs) for estimating the previous models in a two-stage analysis. Using a one-stage approach, instead, the predicted curve from those alternative analyses are presented graphically in Figure <a href="appendix-b-supplementary-figures.html#fig:p-comp-os">B.4</a> together with the quadratic model described before.
+In the spike at 0 model, the predicted mortality risk for the unexposed participants was 14% higher (95% CI 1.02, 1.28) as compared to participants drinking 1 cup/day. Every one cup per day increase in coffee consumption was associated with 2% (95% CI 0.95, 1.01) reduction in all-risk mortality, whereas the same number was less pronounced (<span class="math inline">\(\beta_3\)</span> = 0.01) for coffee consumption higher than 4 cups/day, with a decreased risk of 1% (95% CI 0.96, 1.02).
+The categorical model provided similar results with a 16% (95% CI 1.04, 1.28) higher mortality risk for never drinkers compared to the category <span class="math inline">\([1, 3)\)</span> of coffee consumption. Categories for coffee consumption greater or equal to 3 cup/day indicated a decreased mortality risk. We can evaluate if this further decline is significant by testing <span class="math inline">\(H_0: \beta_2 = \beta_3 = \beta_4 = 0\)</span>. The multivariate Wald test did not provide enough evidence to reject the null hypothesis (<span class="math inline">\(\chi_3^2\)</span> = 5.08, <span class="math inline">\(p\)</span> value = 0.17).
+The fit of the alternative analyses can be compared by looking at the AIC. We selected the quadratic curve as the best fitting model since it had the lowest AIC (-29), as compared to the spike at 0 (-28) and the categorical model (-11).</p>
+<p>After choosing the quadratic curve as the basis for modelling the dose–response association, we might try to relate the heterogeneity observed in the VPC plot to study-level covariates. For example, we can investigate if the sex of the study participants (3 levels: only men, only women, both sexes) substantially alter the combined quadratic association or partially explain the observed heterogeneity. This can be done by fitting a meta-regression model which includes in the fixed-effect matrix the interactions between the quadratic transformations (<span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span>) and the two dummy variables (<span class="math inline">\(u_1\)</span> and <span class="math inline">\(u_2\)</span>) for the sex of the participants
+<span class="math display">\[\begin{multline*}
+\mathbf{y}_i = (\beta_1 + b_{i1}) (\mathbf{x}_{i} - {x}_{i0}) + (\beta_2  + b_{i2}) (\mathbf{x}_{i}^2 - {x}_{i0}^2) +  \\
++ \beta_3 (\mathbf{x}_{i} - {x}_{i0}) \times \mathbf{u_1}_{i} + \beta_4 (\mathbf{x}_{i}^2 - {x}_{i0}^2)\times \mathbf{u_1}_{i}  + \\
++ \beta_5 (\mathbf{x}_{i} - {x}_{i0}) \times \mathbf{u_2}_{i} + \beta_6 (\mathbf{x}_{i}^2 - {x}_{i0}^2)\times \mathbf{u_2}_{i}  +
+\boldsymbol{\epsilon}_{i}
+\end{multline*}\]</span></p>
+<p>The meta-regression model simplifies to the quadratic model when the coefficients for the interaction terms are equal to 0. A test for <span class="math inline">\(H_0: \beta_3 = \beta_4 = \beta_5 = \beta_6 = 0\)</span> is equivalent to test if the dose–response associations differ according to sex of the participants. The multivariate Wald test (<span class="math inline">\(\chi_3^2\)</span> = 2.41, <span class="math inline">\(p\)</span> value = 0.66) did not reject the null hypothesis. Furthermore, the meta-regression model was not able to explain the observed residual heterogeneity (Figure <a href="appendix-b-supplementary-figures.html#fig:p-coffee-vpc">B.5</a>).</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-crippa2014coffee" class="csl-entry">
+Crippa, A., Discacciati, A., Larsson, S. C., Wolk, A., &amp; Orsini, N. (2014). Coffee consumption and mortality from all causes, cardiovascular disease, and cancer: A dose-response meta-analysis. <em>American Journal of Epidemiology</em>, <em>180</em>(8), 763–775.
+</div>
+<div id="ref-crippa2016red" class="csl-entry">
+Crippa, A., Larsson, S. C., Discacciati, A., Wolk, A., &amp; Orsini, N. (2016). Red and processed meat consumption and risk of bladder cancer: A dose–response meta-analysis of epidemiological studies. <em>European Journal of Nutrition</em>, 1–13.
+</div>
+<div id="ref-gasparrini2012multivariate" class="csl-entry">
+Gasparrini, A., Armstrong, B., &amp; Kenward, M. (2012). Multivariate meta-analysis for non-linear and other multi-parameter associations. <em>Statistics in Medicine</em>, <em>31</em>(29), 3821–3839.
+</div>
+<div id="ref-greenland1992methods" class="csl-entry">
+Greenland, S., &amp; Longnecker, M. P. (1992). Methods for trend estimation from summarized dose-response data, with applications to meta-analysis. <em>American Journal of Epidemiology</em>, <em>135</em>(11), 1301–1309.
+</div>
+<div id="ref-hamling2008facilitating" class="csl-entry">
+Hamling, J., Lee, P., Weitkunat, R., &amp; Ambühl, M. (2008). Facilitating meta-analyses by deriving relative effect and precision estimates for alternative comparisons from a set of estimates presented by exposure level or disease category. <em>Statistics in Medicine</em>, <em>27</em>(7), 954–970.
+</div>
+<div id="ref-legrady1987coffee" class="csl-entry">
+Legrady, D., Dyer, A. R., Shekelle, R. B., Stamler, J., Liu, K., Paul, O., … Shryock, A. M. (1987). Coffee consumption and mortality in the chicago western electric company study. <em>American Journal of Epidemiology</em>, <em>126</em>(5), 803–812.
+</div>
+<div id="ref-nilsson2012traditional" class="csl-entry">
+Nilsson, L. M., Winkvist, A., Brustad, M., Jansson, J.-H., Johansson, I., Lenner, P., … Van Guelpen, B. (2012). A traditional sami diet score as a determinant of mortality in a general northern swedish population. <em>International Journal of Circumpolar Health</em>, <em>71</em>(1), 18537.
+</div>
+<div id="ref-tidyverse" class="csl-entry">
+Wickham, H. (2017). <em>Tidyverse: Easily install and load the ’tidyverse’</em>. Retrieved from <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": [
+    ["thesis.pdf", "PDF"],
+    ["thesis.epub", "EPUB"],
+    ["thesis.docx", "Word"]
+  ],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

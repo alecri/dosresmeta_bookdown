@@ -1,0 +1,114 @@
+# (APPENDIX) Appendix {-}  
+
+# Appendix A: Restricted cubic splines {#sec:rcs-app}
+
+A Restricted Cubic Splines (RCS) model with 3 knots $\mathbf{k} = \left(k_1, \dots, k_3\right)$ can be derived from a corresponding Cubic Splines (CS) model by forcing the curve to be linear at the extremes of the exposure distribution.
+
+The CS model with 3 knots $\mathbf{k}$ is defined as  
+\begin{equation}
+\mathrm{CS}(x) = \beta_1 x + \beta_2x^2 + \beta_3x^3 + \beta_4\left(x - k_1 \right)_{+}^3 + \beta_5\left( x - k_2\right)_{+}^3 + \beta_6\left( x - k_3\right)_{+}^3
+(\#eq:csa)
+\end{equation}
+where the `+' notation has been used ($u_+ = u$ if $u \ge 0$ and $u_+ = 0$ otherwise).
+
+A RCS model restricts the CS function in Equation \@ref(eq:csa) to be linear before the first knot ($k_1$) and after the last knot ($k_3$). 
+The first linearity constraint requires the model \@ref(eq:csa) to be linear for $x \le k_1$ 
+\begin{equation*}
+\mathrm{CS}(x) = \beta_1 x + \beta_2x^2 + \beta_3x^3
+(\#eq:cs-k1a)
+\end{equation*}
+
+Hence, $\beta_2 = 0 \land \beta_3 = 0$.
+
+The second linearity constraint requires the model \@ref(eq:csa) to be linear for $x \ge k_3$ 
+\begin{align*}
+\mathrm{CS}(x) =  & \beta_1 x + \beta_4\left( x^3 - 3x^2k_1 + 3xk_1^2- k_1^3 \right) + \beta_5\left( x^3 - 3x^2k_2 + 3xk_2^2- k_2^3 \right) + \nonumber \\
+	&+ \beta_6\left( x^3 - 3x^2k_3 + 3xk_3^2- k_3^3 \right) =  \nonumber \\
+	&= - \left(\beta_4k_1^3 + \beta_5k_2^3 + \beta_6k_3^3 \right) + \left( \beta_1 + 3\beta_4k_1^2 + 3\beta_5k_2^2 + 3\beta_6k_3^2\right)x +  \nonumber \\
+	&- 3\left( \beta_4k_1 + \beta_5k_2 + \beta_6k_3\right)x^2 - \left( \beta_4 + \beta_5 + \beta_6\right)x^3
+(\#eq:cs-k3a)
+\end{align*}
+ 
+\begin{equation*}
+\begin{cases}\beta_4k_1 + \beta_5k_2 + \beta_6k_3 = 0 \\ 
+\beta_4 + \beta_5 + \beta_6 = 0 \end{cases}
+\begin{cases}\beta_4k_1 + \beta_5k_2 - \beta_4k_3 - \beta_5 k_3 = 0 \\ 
+\beta_6 = -\beta_4 - \beta_5 \end{cases}
+\begin{cases}\beta_5 = -\beta_4\frac{k_3 - k_1}{k_3 - k_2} \\ 
+\beta_6 = -\beta_4 + \beta_4\frac{k_3 - k_2}{k_2 - k_1} \end{cases}
+\end{equation*}
+
+\begin{equation}
+\begin{cases}\beta_5 = -\beta_4\frac{k_3 - k_1}{k_3 - k_2} \\ 
+\beta_6 = -\beta_4 + \beta_4\frac{k_3 - k_1}{k_3 - k_2} \end{cases}
+\begin{cases}\beta_5 = -\beta_4\frac{k_3 - k_1}{k_3 - k_2} \\ 
+\beta_6 = \beta_4 \frac{k_2 - k_1}{k_3 - k_2} \end{cases}
+(\#eq:systema)
+\end{equation}
+
+We can rewrite equation \@ref(eq:csa) with $\beta_2 = 0 \land \beta_3 = 0$ and equations \@ref(eq:systema)
+
+\begin{equation}
+\mathrm{RCS}(x) = \beta_1 x + \beta_4 \left[ \left( x - k_1 \right)_{+}^3 - \frac{k_3 - k_1}{k_3 - k_2} \left( x - k_2  \right)_{+}^3 + \frac{k_2 - k_1}{k_3 - k_2} \left(x - k_3 \right)_{+}^3\right]
+(\#eq:rcsfina)
+\end{equation}
+
+that is a function of two variables: the quantitative exposure $x$ and a transformation of $x$.
+
+
+# Appendix B: Supplementary figures
+
+```{r p-indiv, fig.cap="Study-specific quadratic associations between coffee consumption and all-cause mortality. The relative risks are presented on a log scale using 0 cups/day as referent [@crippa2016red]."}
+p_indiv
+```
+
+```{r fig-dist-vi, fig.cap="Empirical distributions for within-error terms for the study-specific linear trend in a dose--response meta-analysis between processed and red meat and bladder cancer risk [@crippa2016red]."}
+dist_vi
+```
+
+```{r p-chr, fig.cap="Graphical visualization of the study-specific exposure distribution for 13 studies included in a dose--response meta-analysis between red meat consumption (g per day) and bladder cancer risk. The crosses and circles are, respectively, the referent and non-referent assigned doses of red meat consumption."}
+p_chr
+```
+
+```{r p-comp-os, fig.cap="Comparison of different strategies (quadratic, spike at 0, and categorical models) in a dose--response meta-analysis of coffee consumption (cups/day) and all-cause mortality. The relative risks are presented on the log scale using 1 cup/day as referent."}
+p_comp
+```
+
+```{r p-coffee-vpc, fig.cap="Variance Partition Coefficient, $\\textrm{VPC}_{ij}$, versus observed dose levels plot and LOWESS smoother for dose--response meta-analysis between coffee consumption (cusp/day) and all-cause mortality using a quadratic and meta-regression model."}
+p_coffee_vpc
+```
+
+
+# Appendix C: Supplementary tables
+
+```{r chr-redtab}
+kable(chr_red, align = "c", booktabs = T, digits = 1, 
+      col.names = c("ID", "Referent", "Min", "P25", "Median", "P75", "Max"), 
+      caption = "Descriptive statistics of the assigned dose levels for 13 studies 
+      included in a dose--response meta-analysis between red meat consumption (g per day) and bladder cancer risk.", linesep = "")
+```
+
+
+```{r AIC-pi-red}
+lapply(AIC_pi_red, round, 2) %>%
+  do.call("cbind", .) %>%
+  `rownames<-`(apply(fpgrid, 1, function(f) paste0("(", paste(f, collapse = ", "), ")"))) %>%
+  rbind(
+    `Best p` = apply(fpgrid[unlist(pb_red), ], 1, function(f) paste(f, collapse = ", "))
+  ) %>%
+  as.data.frame() %>%
+  rownames_to_column(var = "p") %>%
+  kable(align = "c", booktabs = T, escape = F, longtable = T,
+        caption = "AIC for the study-specific second-degree fractional polynomials with power terms specified by $p$ in a dose--response meta-analysis between red meat consumption (g per day) and bladder cancer risk. The last row reports the power term corresponding to the lowest AIC.", linesep = "") %>%
+  add_header_above(c(" " = 1, "Study ID" = 13))
+```
+
+
+```{r blup-tab}
+bi %>%
+  select(id, bi.1.x:bi.2.y) %>%
+  kable(align = "c", booktabs = T, escape = F, digits = 3, linesep = c(""), 
+        caption = "Conditional predicted coefficients for quadratic curves in 12 studies on the association between coffee consumption (cups/day) and all-cause mortality based on a one-stage (os) and two-stage (ts) approach.", 
+        col.names = c("ID", "$\\hat \\beta_{1\\textrm{os}}$", "$\\hat \\beta_{2\\textrm{os}}$",
+                      "$\\hat \\beta_{1\\textrm{ts}}$", "$\\hat \\beta_{2\\textrm{ts}}$"))
+```
